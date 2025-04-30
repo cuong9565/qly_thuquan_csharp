@@ -118,10 +118,10 @@
   <ItemGroup>
     <Compile Include="Controller\ThanhVienController.cs" />
     <Compile Include="Controller\ThietBiController.cs" />
-    <Compile Include="ucHistoryLogin.cs">
+    <Compile Include="View\UserControl\ucHistoryLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucHistoryLogin.Designer.cs">
+    <Compile Include="View\UserControl\ucHistoryLogin.Designer.cs">
       <DependentUpon>ucHistoryLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControl\ucMuonDatCho.cs">
@@ -203,7 +203,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ucHistoryLogin.resx">
+    <EmbeddedResource Include="View\UserControl\ucHistoryLogin.resx">
       <DependentUpon>ucHistoryLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl\ucMuonDatCho.resx">
