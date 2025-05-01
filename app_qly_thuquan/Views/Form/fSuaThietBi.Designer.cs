@@ -106,6 +106,7 @@
             // 
             // cbbState
             // 
+            this.cbbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbState.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbState.FormattingEnabled = true;
             this.cbbState.Items.AddRange(new object[] {
@@ -209,7 +210,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cbbState;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.TextBox txbName;
@@ -217,5 +217,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbbState;
     }
 }

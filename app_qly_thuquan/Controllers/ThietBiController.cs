@@ -30,7 +30,7 @@ namespace qly_thuquan.Controller
             }
             return dt;
         }
-        public ThietBi getById(int id)
+        public ThietBi getById(string id)
         {
             ThietBi tv = new ThietBi();
             try
@@ -43,29 +43,26 @@ namespace qly_thuquan.Controller
             }
             return tv;
         }
-        public void insert(string name)
+        public void insert(string id, string name)
         {
             try
             {
+                if (id=="") throw new Exception("Mã không được để trống!");
                 if (name == "") throw new Exception("Tên không được để trống!");
-                if (ThietBiModel.getInstance().checkSame(name)) throw new Exception($"Tên thiết bị '{name}' đã tồn tại!");
-                ThietBiModel.getInstance().insert(name);
+                if (ThietBiModel.getInstance().checkSame(id)) throw new Exception($"Mã thiết bị '{id}' đã tồn tại!");
+                ThietBiModel.getInstance().insert(id, name);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-        public void update(int id, string name, string state)
+        public void update(string id, string name, string state)
         {
             try
             {
                 if (name == "") throw new Exception("Tên không được để trống!");
                 if (state == "") throw new Exception("Trạng thái không được để trống!");
-                    
-                ThietBi tb = ThietBiModel.getInstance().getById(id);
-                if (ThietBiModel.getInstance().checkSame(name) && tb.getName()!=name) 
-                    throw new Exception($"Tên thiết bị '{name}' đã tồn tại!");
                 ThietBiModel.getInstance().update(id, name, state);
             }
             catch (Exception ex)
@@ -73,11 +70,24 @@ namespace qly_thuquan.Controller
                 throw new Exception(ex.Message);
             }
         }
-        public void delete(int id)
+        public void delete(string id)
         {
             try
             {
                 ThietBiModel.getInstance().delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public int deleteByTopId(string top)
+        {
+            try
+            {
+                if (top.Length != 2) throw new Exception("Chuỗi nhập vào phải là 2 kí tự");
+                return ThietBiModel.getInstance().deleteByTopId(top);
             }
             catch (Exception ex)
             {

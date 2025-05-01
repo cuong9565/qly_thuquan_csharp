@@ -20,7 +20,7 @@ namespace qly_thuquan.Model
         {
             try
             {
-                String sql =
+                string sql =
                     "select tv.id as 'Mã số', tv.lName as 'Họ', tv.fName as 'Tên', dateCreate as 'Ngày đăng ký', email as 'Email', phone as 'Số điện thoại', password as 'Mật khẩu'" +
                     "from thanh_vien tv";
                 return DataProvider.getInstance().ExecuteQuery(sql);
@@ -35,7 +35,7 @@ namespace qly_thuquan.Model
             ThanhVien tv = new ThanhVien();
             try
             {
-                String sql =
+                string sql =
                     "select * " +
                     "from thanh_vien " +
                     "where id = @id";
@@ -51,7 +51,7 @@ namespace qly_thuquan.Model
         }
         public bool checkSame(string id)
         {
-            String sql =
+            string sql =
                     "select * " +
                     "from thanh_vien " +
                     "where id = @id";
@@ -62,7 +62,7 @@ namespace qly_thuquan.Model
         {
             try
             {
-                String sql =
+                string sql =
                     "insert into thanh_vien(id, lName, fName, email, phone) " +
                     "values( @id , @fName , @lName , @email , @pphone )";
                 DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { id, lName, fName, email, phone });
@@ -76,7 +76,7 @@ namespace qly_thuquan.Model
         {
             try
             {
-                String sql =
+                string sql =
                     "update thanh_vien set lName = @lName , fName = @fName , email = @email , phone = @phone " +
                     "where id = @id";
                 DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { lName, fName, email, phone, id });
@@ -90,7 +90,7 @@ namespace qly_thuquan.Model
         {
             try
             {
-                String sql =
+                string sql =
                     "delete from thanh_vien " +
                     "where id = @id";
                 DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { id });
@@ -105,7 +105,7 @@ namespace qly_thuquan.Model
             int res = 0;
             try
             {
-                String sql =
+                string sql =
                     "delete from thanh_vien " +
                     "where year(dateCreate) = @dateCreate";
                 res = DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { year });

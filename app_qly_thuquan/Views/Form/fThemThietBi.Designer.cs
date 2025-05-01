@@ -37,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txbId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -51,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 353);
+            this.panel1.Size = new System.Drawing.Size(782, 453);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -59,9 +61,9 @@
             this.panel4.Controls.Add(this.btnCancel);
             this.panel4.Controls.Add(this.btnConfirm);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 227);
+            this.panel4.Location = new System.Drawing.Point(0, 300);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(782, 126);
+            this.panel4.Size = new System.Drawing.Size(782, 153);
             this.panel4.TabIndex = 3;
             // 
             // btnCancel
@@ -88,18 +90,20 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.txbId);
             this.panel3.Controls.Add(this.txbName);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 100);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(782, 127);
+            this.panel3.Size = new System.Drawing.Size(782, 200);
             this.panel3.TabIndex = 2;
             // 
             // txbName
             // 
             this.txbName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbName.Location = new System.Drawing.Point(223, 43);
+            this.txbName.Location = new System.Drawing.Point(224, 108);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(426, 30);
             this.txbName.TabIndex = 3;
@@ -108,7 +112,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 43);
+            this.label1.Location = new System.Drawing.Point(61, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 26);
             this.label1.TabIndex = 2;
@@ -133,11 +137,29 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Thêm thiết bị";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(61, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 26);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Mã số";
+            // 
+            // txbId
+            // 
+            this.txbId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbId.Location = new System.Drawing.Point(224, 43);
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(426, 30);
+            this.txbId.TabIndex = 5;
+            // 
             // fThemThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 353);
+            this.ClientSize = new System.Drawing.Size(782, 453);
             this.Controls.Add(this.panel1);
             this.Name = "fThemThietBi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -163,5 +185,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txbId;
     }
 }

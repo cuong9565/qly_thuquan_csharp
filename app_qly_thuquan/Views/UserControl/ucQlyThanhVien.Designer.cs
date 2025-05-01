@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvThanhVien = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -46,12 +47,14 @@
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.bds = new System.Windows.Forms.BindingSource(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThanhVien)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bds)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -272,6 +275,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bds)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,5 +300,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.ComboBox cbSearch;
+        private System.Windows.Forms.BindingSource bds;
     }
 }

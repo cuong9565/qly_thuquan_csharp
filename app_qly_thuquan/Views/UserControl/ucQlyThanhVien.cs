@@ -18,11 +18,11 @@ namespace qly_thuquan
 {
     public partial class ucQlyThanhVien : UserControl
     {
-        DataTable dt = new DataTable();
         public ucQlyThanhVien()
         {
             InitializeComponent();
             cbSearch.SelectedIndex = 0;
+            dtgvThanhVien.DataSource = bds;
             load();
         }
 
@@ -30,8 +30,7 @@ namespace qly_thuquan
         {
             try
             {
-                dt = ThanhVienController.getInstance().getAll();
-                dtgvThanhVien.DataSource = dt;
+                bds.DataSource = ThanhVienController.getInstance().getAll();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -78,11 +77,15 @@ namespace qly_thuquan
         {
             try
             {
-                int year = int.Parse(txbYear.Text);
-                int res = ThanhVienController.getInstance().deleteByYear(year);
-                MessageBox.Show($"Xóa thành công {res} thành viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txbYear.Text = "";
-                load();
+                DialogResult choose = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (choose == DialogResult.Yes)
+                {
+                    int year = int.Parse(txbYear.Text);
+                    int res = ThanhVienController.getInstance().deleteByYear(year);
+                    MessageBox.Show($"Xóa thành công {res} thành viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txbYear.Text = "";
+                    load();
+                }
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -142,9 +145,7 @@ namespace qly_thuquan
         {
             string txt = txbSearch.Text.Trim();
             string col = cbSearch.SelectedItem.ToString();
-            //DataView dv = dt.DefaultView;
-            //dv.RowFilter = $"'{col}' like '%{txt}%'";
-            //dtgvThanhVien.DataSource = dv;
+            bds.Filter = $"[{col}] like '%{txt}%'";
         }
     }
 }

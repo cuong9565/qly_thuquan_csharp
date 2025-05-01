@@ -29,7 +29,7 @@ namespace qly_thuquan
         {
             try
             {
-                ThietBiController.getInstance().insert(txbName.Text);
+                ThietBiController.getInstance().insert(txbId.Text, txbName.Text);
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fParent.load();
                 Close();

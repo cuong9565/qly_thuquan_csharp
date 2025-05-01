@@ -34,7 +34,7 @@ namespace qly_thuquan
         {
             try
             {
-                ThietBiController.getInstance().update(int.Parse(txbId.Text), txbName.Text, cbbState.SelectedItem.ToString());
+                ThietBiController.getInstance().update(txbId.Text, txbName.Text, cbbState.SelectedItem.ToString());
                 MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fParent.load();
             }

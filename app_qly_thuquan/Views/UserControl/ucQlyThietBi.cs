@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mysqlx;
 using OfficeOpenXml;
 using qly_thuquan.Controller;
 using qly_thuquan.Model;
@@ -16,11 +17,11 @@ namespace qly_thuquan
 {
     public partial class ucQlyThietBi : UserControl
     {
-        DataTable dt = new DataTable();
         public ucQlyThietBi()
         {
             InitializeComponent();
             cbSearch.SelectedIndex = 0;
+            dtgvThietBi.DataSource = bds;
             load();
         }
 
@@ -28,13 +29,13 @@ namespace qly_thuquan
         {
             try
             {
-                dt = ThietBiController.getInstance().getAll();
-                dtgvThietBi.DataSource = dt;
+                bds.DataSource = ThietBiController.getInstance().getAll();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            txbSearch_TextChanged(null, null);
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -46,7 +47,7 @@ namespace qly_thuquan
             int row = dtgvThietBi.SelectedRows[0].Index;
             if (row >= 0)
             {
-                int id = (int)dtgvThietBi.Rows[row].Cells[0].Value;
+                string id = (string)dtgvThietBi.Rows[row].Cells[0].Value;
                 ThietBi tb = ThietBiController.getInstance().getById(id);
                 fSuaThietBi f = new fSuaThietBi(this, tb);
                 f.ShowDialog();
@@ -62,7 +63,7 @@ namespace qly_thuquan
                 DialogResult res = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
-                    int id = (int)dtgvThietBi.Rows[row].Cells[0].Value;
+                    string id = (string)dtgvThietBi.Rows[row].Cells[0].Value;
                     ThietBiController.getInstance().delete(id);
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     load();
@@ -91,8 +92,9 @@ namespace qly_thuquan
                         {
                             try
                             {
-                                string name = worksheet.Cells[i, 1].Text;
-                                ThietBiController.getInstance().insert(name);
+                                string id = worksheet.Cells[i, 1].Text;
+                                string name = worksheet.Cells[i, 2].Text;
+                                ThietBiController.getInstance().insert(id, name);
                                 res++;
                             }
                             catch (Exception ex)
@@ -105,6 +107,39 @@ namespace qly_thuquan
                     MessageBox.Show($"Đã thêm {res} thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     load();
                 }
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txbSearch.Text = "";
+            cbSearch.SelectedIndex = 0;
+            load();
+        }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+            string txt = txbSearch.Text.Trim();
+            string col = cbSearch.SelectedItem.ToString();
+            bds.Filter = $"[{col}] like '%{txt}%'";
+        }
+
+        private void btnDeleteMore_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    int res = ThietBiController.getInstance().deleteByTopId(txbDeleteMore.Text);
+                    MessageBox.Show($"Đã xóa {res} thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txbDeleteMore.Text = "";
+                    load();
+                }   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

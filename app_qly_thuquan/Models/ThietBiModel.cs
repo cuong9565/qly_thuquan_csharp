@@ -20,7 +20,7 @@ namespace qly_thuquan.Model
         {
             try
             {
-                String sql =
+                string sql =
                     "select id as 'Mã số', name as 'Tên', state as 'Trạng thái' " +
                     "from thiet_bi";
                 return DataProvider.getInstance().ExecuteQuery(sql);
@@ -30,12 +30,12 @@ namespace qly_thuquan.Model
                 throw new Exception(e.Message);
             }
         }
-        public ThietBi getById(int id)
+        public ThietBi getById(string id)
         {
             ThietBi tv = new ThietBi();
             try
             {
-                String sql =
+                string sql =
                     "select * " +
                     "from thiet_bi " +
                     "where id = @id";
@@ -49,34 +49,34 @@ namespace qly_thuquan.Model
             }
             return tv;
         }
-        public bool checkSame(string name)
+        public bool checkSame(string id)
         {
-            String sql =
+            string sql =
                 "select * " +
                 "from thiet_bi " +
-                "where name = @name";
-            DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] { name });
+                "where id = @id";
+            DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] { id });
             return dt.Rows.Count > 0;
         }
-        public void insert(string name)
+        public void insert(string id, string name)
         {
             try
             {
-                String sql =
-                    "insert into thiet_bi(name) " +
-                    "values( @name )";
-                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { name });
+                string sql =
+                    "insert into thiet_bi(id, name) " +
+                    "values( @id , @name )";
+                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { id, name });
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
         }
-        public void update(int id, string name, string state)
+        public void update(string id, string name, string state)
         {
             try
             {
-                String sql =
+                string sql =
                     "update thiet_bi set name = @name , state = @state " +
                     "where id = @id";
                 DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { name, state, id });
@@ -86,11 +86,11 @@ namespace qly_thuquan.Model
                 throw new Exception(e.Message);
             }
         }
-        public void delete(int id)
+        public void delete(string id)
         {
             try
             {
-                String sql =
+                string sql =
                     "delete from thiet_bi " +
                     "where id = @id";
                 DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { id });
@@ -99,6 +99,24 @@ namespace qly_thuquan.Model
             {
                 throw new Exception(e.Message);
             }
+        }
+
+        public int deleteByTopId(string top)
+        {
+            int res;
+            try
+            {
+                top += "%";
+                string sql =
+                    "delete from thiet_bi " +
+                    "where id like @top";
+                res = DataProvider.getInstance().ExecuteNonQuery(sql, new Object[] { top });
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return res;
         }
     }
 }

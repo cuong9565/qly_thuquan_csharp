@@ -13,7 +13,7 @@ create table thanh_vien(
 );
 
 create table thiet_bi(
-	id int auto_increment primary key,
+	id varchar(100) primary key,
 	name varchar(100) character set utf8mb4,
 	state varchar(100) character set utf8mb4 default 'Sẵn sàng' -- Sẵn sàng, Đang mượn, Hỏng
 );
@@ -51,17 +51,24 @@ INSERT INTO thanh_vien (id, lName, fName, dateCreate, email, phone) VALUES
 ('90012345', 'Lê Văn', 'Khôi', '2022-06-12', 'khoi.le@yahoo.com', '0981234567'),
 ('01123456', 'Phạm Thị', 'Nhi', '2020-09-08', 'nhi.pham@outlook.com', '0992345678');
 
-
-INSERT INTO thiet_bi(name)
-VALUES 
-    ('Máy 1'),
-    ('Máy 2'),
-    ('Máy 3'),
-    ('Máy 4'),
-    ('Máy 5'),
-    ('Máy 6'),
-    ('Máy 7'),
-    ('Máy 8'),
-    ('Máy 9'),
-    ('Máy 10');
-
+INSERT INTO thiet_bi(id, name) values
+('MT_001', 'Máy tính 1'),
+('MT_002', 'Máy tính 2'),
+('MT_003', 'Máy tính 3'),
+('MT_004', 'Máy tính 4'),
+('MT_005', 'Máy tính 5'),
+('MT_006', 'Máy tính 6'),
+('MT_007', 'Máy tính 7'),
+('MT_008', 'Máy tính 8'),
+('MT_009', 'Máy tính 9'),
+('MT_010', 'Máy tính 10'),
+('MI_001', 'Máy in 1'),
+('MI_002', 'Máy in 2'),
+('MI_003', 'Máy in 3'),
+('MI_004', 'Máy in 4'),
+('MI_005', 'Máy in 5'),
+('MC_001', 'Máy chiếu 1'),
+('MC_002', 'Máy chiếu 2'),
+('MC_003', 'Máy chiếu 3'),
+('MC_004', 'Máy chiếu 4'),
+('MC_005', 'Máy chiếu 5');
