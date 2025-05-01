@@ -1,5 +1,15 @@
-﻿.box{
-    background-color: aqua;
-    min-height: 50px;
-    margin-top: 10px;
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.card-login{
+    padding: 20px;
 }

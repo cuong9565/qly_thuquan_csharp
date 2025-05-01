@@ -3,13 +3,13 @@
   "WorkspaceRootPath": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\content\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,15 +23,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "..\\web_qly_thuquan\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T01:04:35.384Z",
+              "DocumentIndex": 1,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Content\\style.css",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Content\\style.css",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Content\\style.css",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Content\\style.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-01T01:29:27.271Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -39,28 +39,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "..\\web_qly_thuquan\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Views\\Login\\Index.cshtml",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-01T01:07:11.366Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-05-01T02:28:01.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "style.css",
-              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Content\\style.css",
-              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Content\\style.css",
-              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Content\\style.css",
-              "RelativeToolTip": "..\\web_qly_thuquan\\Content\\style.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-01T01:29:27.271Z",
-              "IsPinned": true,
+              "DocumentIndex": 2,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Controllers\\LoginController.cs",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T02:27:49.101Z",
               "EditorCaption": ""
             },
             {
