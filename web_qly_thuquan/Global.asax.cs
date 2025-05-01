@@ -17,7 +17,6 @@ namespace web_qly_thuquan
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

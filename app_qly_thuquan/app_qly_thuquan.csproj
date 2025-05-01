@@ -116,121 +116,121 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ThanhVienController.cs" />
-    <Compile Include="Controller\ThietBiController.cs" />
-    <Compile Include="View\UserControl\ucHistoryLogin.cs">
+    <Compile Include="Controllers\ThanhVienController.cs" />
+    <Compile Include="Controllers\ThietBiController.cs" />
+    <Compile Include="Views\UserControl\ucHistoryLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\ucHistoryLogin.Designer.cs">
+    <Compile Include="Views\UserControl\ucHistoryLogin.Designer.cs">
       <DependentUpon>ucHistoryLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\ucMuonDatCho.cs">
+    <Compile Include="Views\UserControl\ucMuonDatCho.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\ucMuonDatCho.Designer.cs">
+    <Compile Include="Views\UserControl\ucMuonDatCho.Designer.cs">
       <DependentUpon>ucMuonDatCho.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\ucThongKe.cs">
+    <Compile Include="Views\UserControl\ucThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\ucThongKe.Designer.cs">
+    <Compile Include="Views\UserControl\ucThongKe.Designer.cs">
       <DependentUpon>ucThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\ucVaoThuQuan.cs">
+    <Compile Include="Views\UserControl\ucVaoThuQuan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\ucVaoThuQuan.Designer.cs">
+    <Compile Include="Views\UserControl\ucVaoThuQuan.Designer.cs">
       <DependentUpon>ucVaoThuQuan.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\ucViPham.cs">
+    <Compile Include="Views\UserControl\ucViPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\ucViPham.Designer.cs">
+    <Compile Include="Views\UserControl\ucViPham.Designer.cs">
       <DependentUpon>ucViPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\fSuaThietBi.cs">
+    <Compile Include="Views\Form\fSuaThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\fSuaThietBi.Designer.cs">
+    <Compile Include="Views\Form\fSuaThietBi.Designer.cs">
       <DependentUpon>fSuaThietBi.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\fThemThietBi.cs">
+    <Compile Include="Views\Form\fThemThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\fThemThietBi.Designer.cs">
+    <Compile Include="Views\Form\fThemThietBi.Designer.cs">
       <DependentUpon>fThemThietBi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ThietBi.cs" />
-    <Compile Include="Model\ThietBiModel.cs" />
-    <Compile Include="View\UserControl\ucQlyThietBi.cs">
+    <Compile Include="Models\ThietBi.cs" />
+    <Compile Include="Models\ThietBiModel.cs" />
+    <Compile Include="Views\UserControl\ucQlyThietBi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\ucQlyThietBi.Designer.cs">
+    <Compile Include="Views\UserControl\ucQlyThietBi.Designer.cs">
       <DependentUpon>ucQlyThietBi.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\fSuaThanhVien.cs">
+    <Compile Include="Views\Form\fSuaThanhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\fSuaThanhVien.Designer.cs">
+    <Compile Include="Views\Form\fSuaThanhVien.Designer.cs">
       <DependentUpon>fSuaThanhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\fThemThanhVien.cs">
+    <Compile Include="Views\Form\fThemThanhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\fThemThanhVien.Designer.cs">
+    <Compile Include="Views\Form\fThemThanhVien.Designer.cs">
       <DependentUpon>fThemThanhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\DataProvider.cs" />
-    <Compile Include="Model\ThanhVien.cs" />
-    <Compile Include="Model\ThanhVienModel.cs" />
-    <Compile Include="View\UserControl\ucTrangChu.cs">
+    <Compile Include="Models\DataProvider.cs" />
+    <Compile Include="Models\ThanhVien.cs" />
+    <Compile Include="Models\ThanhVienModel.cs" />
+    <Compile Include="Views\UserControl\ucTrangChu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\ucTrangChu.Designer.cs">
+    <Compile Include="Views\UserControl\ucTrangChu.Designer.cs">
       <DependentUpon>ucTrangChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControl\ucQlyThanhVien.cs">
+    <Compile Include="Views\UserControl\ucQlyThanhVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl\ucQlyThanhVien.Designer.cs">
+    <Compile Include="Views\UserControl\ucQlyThanhVien.Designer.cs">
       <DependentUpon>ucQlyThanhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\fMenu.cs">
+    <Compile Include="Views\Form\fMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form\fMenu.Designer.cs">
+    <Compile Include="Views\Form\fMenu.Designer.cs">
       <DependentUpon>fMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\UserControl\ucHistoryLogin.resx">
+    <EmbeddedResource Include="Views\UserControl\ucHistoryLogin.resx">
       <DependentUpon>ucHistoryLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\ucMuonDatCho.resx">
+    <EmbeddedResource Include="Views\UserControl\ucMuonDatCho.resx">
       <DependentUpon>ucMuonDatCho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\ucThongKe.resx">
+    <EmbeddedResource Include="Views\UserControl\ucThongKe.resx">
       <DependentUpon>ucThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\ucVaoThuQuan.resx">
+    <EmbeddedResource Include="Views\UserControl\ucVaoThuQuan.resx">
       <DependentUpon>ucVaoThuQuan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\ucViPham.resx">
+    <EmbeddedResource Include="Views\UserControl\ucViPham.resx">
       <DependentUpon>ucViPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\fSuaThietBi.resx">
+    <EmbeddedResource Include="Views\Form\fSuaThietBi.resx">
       <DependentUpon>fSuaThietBi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\fThemThietBi.resx">
+    <EmbeddedResource Include="Views\Form\fThemThietBi.resx">
       <DependentUpon>fThemThietBi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\ucQlyThietBi.resx">
+    <EmbeddedResource Include="Views\UserControl\ucQlyThietBi.resx">
       <DependentUpon>ucQlyThietBi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\fSuaThanhVien.resx">
+    <EmbeddedResource Include="Views\Form\fSuaThanhVien.resx">
       <DependentUpon>fSuaThanhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\fThemThanhVien.resx">
+    <EmbeddedResource Include="Views\Form\fThemThanhVien.resx">
       <DependentUpon>fThemThanhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -242,15 +242,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\UserControl\ucTrangChu.resx">
+    <EmbeddedResource Include="Views\UserControl\ucTrangChu.resx">
       <DependentUpon>ucTrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl\ucQlyThanhVien.resx">
+    <EmbeddedResource Include="Views\UserControl\ucQlyThanhVien.resx">
       <DependentUpon>ucQlyThanhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\fMenu.resx">
+    <EmbeddedResource Include="Views\Form\fMenu.resx">
       <DependentUpon>fMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="FileExcels\Nhập excel thiết bị.xlsx" />
+    <None Include="FileExcels\Nhập excel thành viên.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
