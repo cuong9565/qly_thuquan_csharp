@@ -38,9 +38,9 @@
             this.txbDateCreate = new System.Windows.Forms.TextBox();
             this.txbPhone = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
-            this.txbLName = new System.Windows.Forms.TextBox();
-            this.txbId = new System.Windows.Forms.TextBox();
             this.txbFName = new System.Windows.Forms.TextBox();
+            this.txbId = new System.Windows.Forms.TextBox();
+            this.txbLName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -105,9 +105,9 @@
             this.panel3.Controls.Add(this.txbDateCreate);
             this.panel3.Controls.Add(this.txbPhone);
             this.panel3.Controls.Add(this.txbEmail);
-            this.panel3.Controls.Add(this.txbLName);
-            this.panel3.Controls.Add(this.txbId);
             this.panel3.Controls.Add(this.txbFName);
+            this.panel3.Controls.Add(this.txbId);
+            this.panel3.Controls.Add(this.txbLName);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label5);
@@ -164,13 +164,13 @@
             this.txbEmail.Size = new System.Drawing.Size(426, 30);
             this.txbEmail.TabIndex = 3;
             // 
-            // txbLName
+            // txbFName
             // 
-            this.txbLName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLName.Location = new System.Drawing.Point(213, 143);
-            this.txbLName.Name = "txbLName";
-            this.txbLName.Size = new System.Drawing.Size(426, 30);
-            this.txbLName.TabIndex = 3;
+            this.txbFName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbFName.Location = new System.Drawing.Point(213, 143);
+            this.txbFName.Name = "txbFName";
+            this.txbFName.Size = new System.Drawing.Size(426, 30);
+            this.txbFName.TabIndex = 3;
             // 
             // txbId
             // 
@@ -181,13 +181,13 @@
             this.txbId.Size = new System.Drawing.Size(426, 30);
             this.txbId.TabIndex = 3;
             // 
-            // txbFName
+            // txbLName
             // 
-            this.txbFName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbFName.Location = new System.Drawing.Point(213, 89);
-            this.txbFName.Name = "txbFName";
-            this.txbFName.Size = new System.Drawing.Size(426, 30);
-            this.txbFName.TabIndex = 3;
+            this.txbLName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbLName.Location = new System.Drawing.Point(213, 89);
+            this.txbLName.Name = "txbLName";
+            this.txbLName.Size = new System.Drawing.Size(426, 30);
+            this.txbLName.TabIndex = 3;
             // 
             // label8
             // 
@@ -296,8 +296,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txbPhone;
         private System.Windows.Forms.TextBox txbEmail;
-        private System.Windows.Forms.TextBox txbLName;
         private System.Windows.Forms.TextBox txbFName;
+        private System.Windows.Forms.TextBox txbLName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

@@ -29,7 +29,7 @@ namespace qly_thuquan
         {
             try
             {
-                ThanhVienController.getInstance().insert(txbFName.Text, txbLName.Text, txbEmail.Text, txbPhone.Text);
+                ThanhVienController.getInstance().insert(txbId.Text, txbFName.Text, txbLName.Text, txbEmail.Text, txbPhone.Text);
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fParent.load();
                 Close();

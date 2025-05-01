@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <title>Đăng kí tài khoản</title>
+</head>
+<body class="bg-secondary">
+    <div class="card shadow card-login">
+        <div class="card-body">
+            <h2 class="card-title text-center text-primary m-2">Đăng kí thành viên</h2>
+            <div class="row mb-3" >
+                <div class="col-6">
+                    <label class="form-label text-black" for="txtLName">Họ*</label>
+                    <input type="text" id="txtLName" class="form-control" />
+                </div>
+                <div class="col-6">
+                    <label class="form-label text-black" for="txtFName">Tên*</label>
+                    <input type="text" id="txtFName" class="form-control" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-black" for="txtEmail">Email*</label>
+                <input type="text" id="txtEmail" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-black" for="txtPhone">Số điện thoại*</label>
+                <input type="text" id="txtPhone" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-black" for="txtPw">Mật khẩu*</label>
+                <input type="password" id="txtPw" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-black" for="txtConfirmPw">Xác nhận mật khẩu*</label>
+                <input type="password" id="txtConfirmPw" class="form-control" />
+            </div>
+            <div class="mb-4">
+                <input type="checkbox" id="ckbConfirm" class="form-check-input" />
+                <label class="form-label text-black">*Tôi chấp nhận </label> <a class="link-info" href="#">điều khoản</a>
+            </div>
+            <div class="mb-3 text-center">
+                <button class="btn btn-info text-white w-100" onclick="register()">Đăng kí</button>
+            </div>
+            <div class="text-center">
+                Bạn đã có tài khoản?
+                <a class="text-info" href="@Url.Action("Index", "Login")">Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function register() {
+
+        }
+    </script>
+</body>
+</html>

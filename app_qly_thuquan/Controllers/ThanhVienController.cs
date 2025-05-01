@@ -30,7 +30,7 @@ namespace qly_thuquan.Controller
             }
             return dt;
         }
-        public ThanhVien getById(int id)
+        public ThanhVien getById(string id)
         {
             ThanhVien tv = new ThanhVien();
             try
@@ -43,43 +43,39 @@ namespace qly_thuquan.Controller
             }
             return tv;
         }
-        public void insert(string fName, string lName, string email, string phone)
+        public void insert(string id, string lName, string fName, string email, string phone)
         {
             try
             {
-                if (fName == "") throw new Exception("Họ không được để trống!");
-                if (lName == "") throw new Exception("Tên không được để trống!");
+                if (id == "") throw new Exception("Mã số không được để trống!");
+                if (lName == "") throw new Exception("Họ không được để trống!");
+                if (fName == "") throw new Exception("Tên không được để trống!");
                 if (email == "") throw new Exception("Email không được để trống!");
                 if (phone == "") throw new Exception("Số điện thoại không được để trống!");
-                if (ThanhVienModel.getInstance().checkSame(phone)) throw new Exception($"Số điện thoại {phone} đã tồn tại!");
-                ThanhVienModel.getInstance().insert(fName, lName, email, phone);
+                if (ThanhVienModel.getInstance().checkSame(id)) throw new Exception($"Mã số '{id}' đã tồn tại!");
+                ThanhVienModel.getInstance().insert(id, lName, fName, email, phone);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-        public void update(int id, string fName, string lName, string email, string phone)
+        public void update(string id, string lName, string fName, string email, string phone)
         {
             try
             {
-                if (fName == "") throw new Exception("Họ không được để trống!");
-                if (lName == "") throw new Exception("Tên không được để trống!");
+                if (lName == "") throw new Exception("Họ không được để trống!");
+                if (fName == "") throw new Exception("Tên không được để trống!");
                 if (email == "") throw new Exception("Email không được để trống!");
                 if (phone == "") throw new Exception("Số điện thoại không được để trống!");
-
-                ThanhVien curr = ThanhVienModel.getInstance().getById(id);
-                if (ThanhVienModel.getInstance().checkSame(phone) && curr.GetPhone()!=phone) 
-                    throw new Exception($"Số điện thoại {phone} đã tồn tại!");
-
-                ThanhVienModel.getInstance().update(id, fName, lName, email, phone);
+                ThanhVienModel.getInstance().update(id, lName, fName, email, phone);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-        public void delete(int id)
+        public void delete(string id)
         {
             try
             {

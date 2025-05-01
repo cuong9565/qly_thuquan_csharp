@@ -30,7 +30,7 @@ namespace qly_thuquan.Model
                 throw new Exception(e.Message);
             }
         }
-        public ThanhVien getById(int id)
+        public ThanhVien getById(string id)
         {
             ThanhVien tv = new ThanhVien();
             try
@@ -49,44 +49,44 @@ namespace qly_thuquan.Model
             }
             return tv;
         }
-        public bool checkSame(string phone)
+        public bool checkSame(string id)
         {
             String sql =
                     "select * " +
                     "from thanh_vien " +
-                    "where phone = @phone";
-            DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] { phone });
+                    "where id = @id";
+            DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] { id });
             return dt.Rows.Count > 0;
         }
-        public void insert(string fName, string lName, string email, string phone)
+        public void insert(string id, string lName, string fName, string email, string phone)
         {
             try
             {
                 String sql =
-                    "insert into thanh_vien(fName, lName, email, phone) " +
-                    "values( @fName , @lName , @email , @pphone )";
-                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { fName, lName, email, phone });
+                    "insert into thanh_vien(id, lName, fName, email, phone) " +
+                    "values( @id , @fName , @lName , @email , @pphone )";
+                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { id, lName, fName, email, phone });
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
         }
-        public void update(int id, string fName, string lName, string email, string phone)
+        public void update(string id, string lName, string fName, string email, string phone)
         {
             try
             {
                 String sql =
-                    "update thanh_vien set fName = @fName , lName = @lName , email = @email , phone = @phone " +
+                    "update thanh_vien set lName = @lName , fName = @fName , email = @email , phone = @phone " +
                     "where id = @id";
-                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { fName, lName, email, phone, id });
+                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { lName, fName, email, phone, id });
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
         }
-        public void delete(int id)
+        public void delete(string id)
         {
             try
             {

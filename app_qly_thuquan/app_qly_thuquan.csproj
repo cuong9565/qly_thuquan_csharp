@@ -252,7 +252,6 @@
       <DependentUpon>fMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="FileExcels\Nhập excel thiết bị.xlsx" />
-    <None Include="FileExcels\Nhập excel thành viên.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -6,30 +6,55 @@
     <meta charset="utf-8" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/style.css" />
-    <title>Thư quán</title>
+    <title>Đăng nhập tài khoản</title>
 </head>
-<body class="bg-body">
-    <form action="/" method="post">
-        <div class="card shadow card-login"> 
-            <div class="card-body">
-                <h2 class="card-title text-center text-primary m-4">Đăng nhập thư quán</h2>
-                <div class="mb-3">
-                    <label class="form-label" for="txtId">Mã số hoặc số điện thoại*</label>
-                    <input class="form-control" type="text" id="txtId"/>
-                </div>
-                <div class="mb-4">
-                    <label class="form-label" for="pswd">Mật khẩu*</label>
-                    <input class="form-control" type="password" id="pswd"/>
-                </div>
-                <div class="mb-3 text-center">
-                    <button class="btn btn-info text-white w-100">Đăng nhập</button>
-                </div>
-                <div class="mt-4 mb-3 text-center">
-                    Bạn chưa có tài khoản?
-                    <a class="text-info" href="#">Đăng kí</a>
-                </div>
+<body class="bg-secondary">
+    <div class="card shadow card-login">
+        <div class="card-body">
+            <h2 class="card-title text-center text-primary m-4">Đăng nhập thư quán</h2>
+            <div class="mb-3">
+                <label class="form-label text-black" for="txtPhone">Số điện thoại</label>
+                <input type="text" id="txtPhone" class="form-control" />
+            </div>
+            <div class="mb-4">
+                <label class="form-label text-black" for="txtPw">Mật khẩu</label>
+                <input type="password" id="txtPw" class="form-control" />
+            </div>
+            <div class="mb-3 text-center">
+                <button class="btn btn-info text-white w-100" onclick="login()">Đăng nhập</button>
+            </div>
+            <div class="text-center">
+                Bạn chưa có tài khoản?
+                <a class="text-info" href="@Url.Action("Index", "Register")">Đăng kí</a>
             </div>
         </div>
-    </form>
+    </div>
+
+    <script>
+        function login() {
+            var phone = document.getElementById("txtPhone").value;
+            var password = document.getElementById("txtPw").value;
+
+            fetch('/Login/IsValidUser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ phone: phone, password: password })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data === true) {
+                    alert("Đăng nhập thành công");
+                    window.location.href = '/Home';
+                } else {
+                    alert("Sai thông tin");
+                }
+            })
+            .catch(error => {
+                alert("Lỗi: " + error);
+            })
+        }
+    </script>
 </body>
 </html>

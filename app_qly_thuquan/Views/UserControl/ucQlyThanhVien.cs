@@ -49,7 +49,7 @@ namespace qly_thuquan
             int row = dtgvThanhVien.SelectedRows[0].Index;
             if (row >= 0)
             {
-                int id = (int) dtgvThanhVien.Rows[row].Cells[0].Value;
+                string id = (string) dtgvThanhVien.Rows[row].Cells[0].Value;
                 ThanhVien tv = ThanhVienController.getInstance().getById(id);
                 fSuaThanhVien f = new fSuaThanhVien(this, tv);
                 f.ShowDialog();
@@ -65,7 +65,7 @@ namespace qly_thuquan
                 DialogResult res = MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
-                    int id = (int)dtgvThanhVien.Rows[row].Cells[0].Value;
+                    string id = (string)dtgvThanhVien.Rows[row].Cells[0].Value;
                     ThanhVienController.getInstance().delete(id);
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     load();
@@ -109,11 +109,12 @@ namespace qly_thuquan
                         {
                             try
                             {
-                                string fName = worksheet.Cells[i, 1].Text;
+                                string id = worksheet.Cells[i, 1].Text;
                                 string lName = worksheet.Cells[i, 2].Text;
-                                string email = worksheet.Cells[i, 3].Text;
-                                string phone = worksheet.Cells[i, 4].Text;
-                                ThanhVienController.getInstance().insert(fName, lName, email, phone);
+                                string fName = worksheet.Cells[i, 3].Text;
+                                string email = worksheet.Cells[i, 4].Text;
+                                string phone = worksheet.Cells[i, 5].Text;
+                                ThanhVienController.getInstance().insert(id, lName, fName, email, phone);
                                 res++;
                             }
                             catch (Exception ex)

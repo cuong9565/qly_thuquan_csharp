@@ -21,9 +21,9 @@ namespace qly_thuquan
             InitializeComponent();
             this.fParent = fParent;
             this.tv = tv;
-            txbId.Text = tv.GetId().ToString();
-            txbFName.Text = tv.GetfName();
-            txbLName.Text = tv.GetlName();
+            txbId.Text = tv.GetId();
+            txbLName.Text = tv.GetfName();
+            txbFName.Text = tv.GetlName();
             txbDateCreate.Text = tv.GetDateCreate().ToString("dd/MM/yyyy");
             txbEmail.Text = tv.GetEmail();
             txbPhone.Text = tv.GetPhone();
@@ -38,7 +38,7 @@ namespace qly_thuquan
         {
             try
             {
-                ThanhVienController.getInstance().update(int.Parse(txbId.Text), txbFName.Text, txbLName.Text, txbEmail.Text, txbPhone.Text);
+                ThanhVienController.getInstance().update(txbId.Text, txbLName.Text, txbFName.Text, txbEmail.Text, txbPhone.Text);
                 MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fParent.load();
             }

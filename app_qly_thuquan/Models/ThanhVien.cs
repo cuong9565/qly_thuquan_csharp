@@ -9,7 +9,7 @@ namespace qly_thuquan.Model
 {
     public class ThanhVien
     {
-        private int id;
+        private string id;
         private string fName;
         private string lName;
         private DateTime dateCreate;
@@ -17,7 +17,7 @@ namespace qly_thuquan.Model
         private string phone;
         private string password;
         public ThanhVien() { }
-        public ThanhVien(int id, string fName, string lName, DateTime dateCreate, string email, string phone, string password)
+        public ThanhVien(string id, string fName, string lName, DateTime dateCreate, string email, string phone, string password)
         {
             this.id = id;
             this.fName = fName;
@@ -29,7 +29,7 @@ namespace qly_thuquan.Model
         }
         public ThanhVien(DataRow row)
         {
-            id = (int)row["id"];
+            id = (string)row["id"];
             fName = (string)row["fName"];
             lName = (string)row["lName"];
             dateCreate = (DateTime)row["dateCreate"];
@@ -38,8 +38,8 @@ namespace qly_thuquan.Model
             password = (string)row["password"];
         }
 
-        public int GetId() { return id; }
-        public void SetId(int value) { id = value; }
+        public string GetId() { return id; }
+        public void SetId(string value) { id = value; }
 
         public string GetfName() { return fName; }
         public void SetfName(string value) { fName = value; }
