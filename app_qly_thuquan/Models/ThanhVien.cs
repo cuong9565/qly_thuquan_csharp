@@ -9,19 +9,19 @@ namespace qly_thuquan.Model
 {
     public class ThanhVien
     {
-        private string id;
-        private string fName;
-        private string lName;
-        private DateTime dateCreate;
-        private string email;
-        private string phone;
-        private string password;
+        private string id = "";
+        private string lName = "";
+        private string fName = "";
+        private DateTime dateCreate = new DateTime();
+        private string email = "";
+        private string phone = "";
+        private string password = "";
         public ThanhVien() { }
-        public ThanhVien(string id, string fName, string lName, DateTime dateCreate, string email, string phone, string password)
+        public ThanhVien(string id, string lName, string fName, DateTime dateCreate, string email, string phone, string password)
         {
             this.id = id;
-            this.fName = fName;
             this.lName = lName;
+            this.fName = fName;
             this.dateCreate = dateCreate.Date;
             this.email = email;
             this.phone = phone;
@@ -30,8 +30,8 @@ namespace qly_thuquan.Model
         public ThanhVien(DataRow row)
         {
             id = (string)row["id"];
-            fName = (string)row["fName"];
             lName = (string)row["lName"];
+            fName = (string)row["fName"];
             dateCreate = (DateTime)row["dateCreate"];
             email = (string)row["email"];
             phone = (string)row["phone"];
@@ -41,11 +41,11 @@ namespace qly_thuquan.Model
         public string GetId() { return id; }
         public void SetId(string value) { id = value; }
 
-        public string GetfName() { return fName; }
-        public void SetfName(string value) { fName = value; }
 
         public string GetlName() { return lName; }
         public void SetlName(string value) { lName = value; }
+        public string GetfName() { return fName; }
+        public void SetfName(string value) { fName = value; }
 
         public DateTime GetDateCreate() { return dateCreate.Date; }
         public void SetDateCreate(DateTime value) { dateCreate = value.Date; }

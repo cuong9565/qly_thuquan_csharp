@@ -9,9 +9,9 @@ namespace qly_thuquan.Model
 {
     public class ThietBi
     {
-        private string id;
-        private string name;
-        private string state;
+        private string id = "";
+        private string name = "";
+        private string state = "";
         public ThietBi() { }
         public ThietBi(string id, string name, string state)
         {

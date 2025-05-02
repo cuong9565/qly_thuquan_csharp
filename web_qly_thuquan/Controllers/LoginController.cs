@@ -11,12 +11,24 @@ namespace web_qly_thuquan.Controllers
     {
         public ActionResult Index()
         {
+            Session.Clear();
             return View();
         }
-        public JsonResult IsValidUser(string phone, string password)
+        [HttpPost]
+        public JsonResult IsValidUser(string id, string password)
         {
-            ThanhVien tv = ThanhVienModel.getInstance().Login(phone, password);
-            return Json(tv.GetId()!=0, JsonRequestBehavior.AllowGet);
+            try
+            {
+                if (id == "") return Json(new { success = false, error = "Mã số không được để trống!" });
+                ThanhVien tv = ThanhVienModel.getInstance().Login(id, password);
+                if (tv.GetId() == "") return Json(new { success = false, error = "Mã số hoặc mật khẩu không hợp lệ!" });
+                Session["UserId"] = tv.GetId();
+            }
+            catch (Exception ex) 
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+            return Json(new { success = true });
         }
     }
 }

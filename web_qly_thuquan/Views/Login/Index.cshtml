@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model web_qly_thuquan.Controllers.LoginController
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -13,8 +15,8 @@
         <div class="card-body">
             <h2 class="card-title text-center text-primary m-4">Đăng nhập thư quán</h2>
             <div class="mb-3">
-                <label class="form-label text-black" for="txtPhone">Số điện thoại</label>
-                <input type="text" id="txtPhone" class="form-control" />
+                <label class="form-label text-black" for="txtId">Mã số sinh viên</label>
+                <input type="text" id="txtId" class="form-control" />
             </div>
             <div class="mb-4">
                 <label class="form-label text-black" for="txtPw">Mật khẩu</label>
@@ -31,28 +33,39 @@
     </div>
 
     <script>
-        function login() {
-            var phone = document.getElementById("txtPhone").value;
-            var password = document.getElementById("txtPw").value;
+        window.onload = function () {
+            var id = sessionStorage.getItem("idRegister")
+            var pw = sessionStorage.getItem("pwRegister")
+            if (id) {
+                document.getElementById("txtId").value = id
+                sessionStorage.removeItem("idRegister")
+            }
+            if (pw) {
+                document.getElementById("txtPw").value = pw
+                sessionStorage.removeItem("pwRegister")
+            }
+        }
 
+        function login() {
+            var id = document.getElementById("txtId").value;
+            var password = document.getElementById("txtPw").value;
             fetch('/Login/IsValidUser', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ phone: phone, password: password })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: id, password: password })
             })
             .then(res => res.json())
             .then(data => {
-                if (data === true) {
+                if (data.success) {
                     alert("Đăng nhập thành công");
-                    window.location.href = '/Home';
-                } else {
-                    alert("Sai thông tin");
+                    window.location.href = "/Home";
+                }
+                else {
+                    alert("Lỗi: " + data.error);
                 }
             })
             .catch(error => {
-                alert("Lỗi: " + error);
+                alert("Lỗi hệ thống: " + error);
             })
         }
     </script>

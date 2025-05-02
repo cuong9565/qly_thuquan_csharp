@@ -11,6 +11,7 @@ namespace web_qly_thuquan.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            if (Session["UserId"] == null) return RedirectToAction("Index", "Login");
             return View();
         }
     }

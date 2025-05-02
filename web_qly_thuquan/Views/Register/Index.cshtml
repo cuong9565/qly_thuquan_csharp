@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model web_qly_thuquan.Models.RegisterController
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -12,7 +14,11 @@
     <div class="card shadow card-login">
         <div class="card-body">
             <h2 class="card-title text-center text-primary m-2">Đăng kí thành viên</h2>
-            <div class="row mb-3" >
+            <div class="mb-3">
+                <label class="form-label text-black" for="txtId">Mã số*</label>
+                <input type="text" id="txtId" class="form-control" />
+            </div>
+            <div class="row mb-3">
                 <div class="col-6">
                     <label class="form-label text-black" for="txtLName">Họ*</label>
                     <input type="text" id="txtLName" class="form-control" />
@@ -30,17 +36,19 @@
                 <label class="form-label text-black" for="txtPhone">Số điện thoại*</label>
                 <input type="text" id="txtPhone" class="form-control" />
             </div>
-            <div class="mb-3">
-                <label class="form-label text-black" for="txtPw">Mật khẩu*</label>
-                <input type="password" id="txtPw" class="form-control" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label text-black" for="txtConfirmPw">Xác nhận mật khẩu*</label>
-                <input type="password" id="txtConfirmPw" class="form-control" />
+            <div class="row mb-3">
+                <div class="col-6">
+                    <label class="form-label text-black" for="txtPw">Mật khẩu*</label>
+                    <input type="password" id="txtPw" class="form-control" />
+                </div>
+                <div class="col-6">
+                    <label class="form-label text-black" for="txtConfirmPw">Xác nhận mật khẩu*</label>
+                    <input type="password" id="txtConfirmPw" class="form-control" />
+                </div>
             </div>
             <div class="mb-4">
                 <input type="checkbox" id="ckbConfirm" class="form-check-input" />
-                <label class="form-label text-black">*Tôi chấp nhận </label> <a class="link-info" href="#">điều khoản</a>
+                <label class="form-label text-black">*Tôi chấp nhận tất cả các </label> <a class="link-danger" href="#">điều khoản</a>
             </div>
             <div class="mb-3 text-center">
                 <button class="btn btn-info text-white w-100" onclick="register()">Đăng kí</button>
@@ -54,7 +62,43 @@
 
     <script>
         function register() {
-
+            var id = document.getElementById("txtId").value
+            var lName = document.getElementById("txtLName").value
+            var fName = document.getElementById("txtFName").value
+            var email = document.getElementById("txtEmail").value
+            var phone = document.getElementById("txtPhone").value
+            var pw = document.getElementById("txtPw").value
+            var confirmPw = document.getElementById("txtConfirmPw").value
+            var ck = document.getElementById("ckbConfirm").checked
+            fetch('Register/RegisterTV', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: id,
+                    lName: lName,
+                    fName: fName,
+                    email: email,
+                    phone: phone,
+                    pw: pw,
+                    confirmPw: confirmPw,
+                    ck: ck
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Đăng kí thành công");
+                    sessionStorage.idRegister = id
+                    sessionStorage.pwRegister = pw
+                    window.location.href = "/Login";
+                }
+                else {
+                    alert("Lỗi: " + data.error);
+                }
+            })
+            .catch(error => {
+                alert("Lỗi hệ thống: " + error);
+            })
         }
     </script>
 </body>
