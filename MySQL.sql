@@ -3,7 +3,7 @@ create database qlthuquan;
 use qlthuquan;
 
 create table thanh_vien(
-	id varchar(100) primary key,
+	id varchar(100) character set utf8mb4 primary key,
 	lName varchar(100) character set utf8mb4,
 	fName varchar(100) character set utf8mb4,
     dateCreate date default (current_date()),
@@ -13,9 +13,39 @@ create table thanh_vien(
 );
 
 create table thiet_bi(
-	id varchar(100) primary key,
+	id varchar(100) character set utf8mb4 primary key,
 	name varchar(100) character set utf8mb4,
 	state varchar(100) character set utf8mb4 default 'Sẵn sàng' -- Sẵn sàng, Đang mượn, Hỏng
+);
+
+create table vao_tq(
+	id int auto_increment primary key,
+    idTV varchar(100) character set utf8mb4 not null,
+    time_in datetime not null,
+    
+    foreign key (idTV) references thanh_vien(id)
+);
+
+create table muon_tra_tb(
+	id int auto_increment primary key,
+    idTV varchar(100) character set utf8mb4 not null,
+    idTB varchar(100) character set utf8mb4 not null,
+    time_book datetime not null,
+    time_borrow datetime,
+    time_return datetime,
+    
+	foreign key (idTV) references thanh_vien(id),
+	foreign key (idTB) references thiet_bi(id)
+);
+
+create table vi_pham(
+	id int auto_increment primary key,
+    idTV varchar(100) character set utf8mb4 not null,
+	name varchar(100) character set utf8mb4 not null,
+	price double default 0,
+    state varchar(100) character set utf8mb4 default 'Chưa xử lý', -- Chưa xử lý, Đã xử lý
+    
+	foreign key (idTV) references thanh_vien(id)
 );
 
 -- INSERT
