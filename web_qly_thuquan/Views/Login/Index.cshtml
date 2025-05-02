@@ -8,9 +8,11 @@
     <meta charset="utf-8" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/MyCSS/style.css" />
+    <script src="~/Scripts/WebForms/MyScripts/shared.js"></script>
     <title>Đăng nhập tài khoản</title>
 </head>
 <body class="bg-secondary">
+
     <div class="card shadow card-login">
         <div class="card-body">
             <h2 class="card-title text-center text-primary m-4">Đăng nhập thư quán</h2>
@@ -54,19 +56,18 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ id: id, password: password })
             })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    alert("Đăng nhập thành công");
-                    window.location.href = "/Home";
-                }
-                else {
-                    alert("Lỗi: " + data.error);
-                }
-            })
-            .catch(error => {
-                alert("Lỗi hệ thống: " + error);
-            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = "/Home";
+                    }
+                    else {
+                        alert("Lỗi: " + data.error)
+                    }
+                })
+                .catch(error => {
+                    alert("Lỗi hệ thống: " + error);
+                })
         }
     </script>
 </body>

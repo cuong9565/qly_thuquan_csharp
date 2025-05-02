@@ -7,7 +7,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/MyCSS/home.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-icons.css" />
-    <title>Trang chủ</title>
+    <title>Lịch sử</title>
 </head>
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top">
@@ -18,13 +18,13 @@
             <div>
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("Index", "Home")">Trang chủ</a>
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">Trang chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("DatCho", "Home")">Đặt chỗ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("LichSu", "Home")">Lịch sử</a>
+                        <a class="nav-link active" href="@Url.Action("LichSu", "Home")">Lịch sử</a>
                     </li>
                 </ul>
             </div>
@@ -43,16 +43,12 @@
             </div>
         </div>
     </nav>
-
-
     <div class="main">
         <div>
             <h1 class="text-success">Chào mừng bạn đến với</h1>
             <h2 class="text-success">Thư Quán</h2>
         </div>
     </div>
-
-
     <footer class="text-center">
         <div class="container-fluid">
             <div class="row bg-dark p-3">

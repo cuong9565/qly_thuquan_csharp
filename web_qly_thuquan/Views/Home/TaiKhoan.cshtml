@@ -7,7 +7,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/MyCSS/home.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-icons.css" />
-    <title>Trang chủ</title>
+    <title>Tài khoản</title>
 </head>
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top">
@@ -18,7 +18,7 @@
             <div>
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("Index", "Home")">Trang chủ</a>
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">Trang chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("DatCho", "Home")">Đặt chỗ</a>
@@ -31,7 +31,7 @@
             <div>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("TaiKhoan", "Home")">Tài khoản</a>
+                        <a class="nav-link active" href="@Url.Action("TaiKhoan", "Home")">Tài khoản</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("DoiMatKhau", "Home")">Đổi mật khẩu</a>
@@ -45,14 +45,63 @@
     </nav>
 
 
+    @*...Code...*@
     <div class="main">
-        <div>
-            <h1 class="text-success">Chào mừng bạn đến với</h1>
-            <h2 class="text-success">Thư Quán</h2>
+        <div class="container">
+            <div class="card p-4 shadow rounded-3" style="max-width: 600px; margin: auto;">
+                <h5>Thông tin tài khoản</h5>
+                <p>Cập nhật thông tin tài khoản</p>
+                <hr />
+                <div class="row mb-3 align-items-center">
+                    <div class="col-4 text-end">
+                        <label class="col-form-label" for="txtId">Mã số sinh viên</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="txtId" readonly/>
+                    </div>
+                </div>
+                <div class="row mb-3 align-items-center">
+                    <div class="col-4 text-end">
+                        <label class="col-form-label" for="txtLName">Họ</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="txtLName" />
+                    </div>
+                </div>
+                <div class="row mb-3 align-items-center">
+                    <div class="col-4 text-end">
+                        <label class="col-form-label" for="txtFName">Tên</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="txtFName" />
+                    </div>
+                </div>
+                <div class="row mb-3 align-items-center">
+                    <div class="col-4 text-end">
+                        <label class="col-form-label" for="txtEmail">Email</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="txtEmail" />
+                    </div>
+                </div>
+                <div class="row mb-3 align-items-center">
+                    <div class="col-4 text-end">
+                        <label class="col-form-label" for="txtPhone">Số điện thoại</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="txtPhone" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                    <button class="btn bg-success text-light fw-bold">Cập nhật</button>
+                </div>
+            </div>
         </div>
     </div>
+    
 
-
+    @*...Footer...*@
     <footer class="text-center">
         <div class="container-fluid">
             <div class="row bg-dark p-3">
