@@ -6,12 +6,13 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
+
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/Content/MyCSS/style.css" />
+
     <title>Đăng kí tài khoản</title>
 </head>
-<body class="bg-secondary">
-    <div class="card shadow card-login">
+<body class="bg-secondary d-flex justify-content-center align-items-center vw-100 vh-100">
+    <div class="card shadow card-login p-4 rounded-4">
         <div class="card-body">
             <h2 class="card-title text-center text-primary m-2">Đăng kí thành viên</h2>
             <div class="mb-3">
@@ -84,21 +85,21 @@
                     ck: ck
                 })
             })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    alert("Đăng kí thành công");
-                    sessionStorage.idRegister = id
-                    sessionStorage.pwRegister = pw
-                    window.location.href = "/Login";
-                }
-                else {
-                    alert("Lỗi: " + data.error);
-                }
-            })
-            .catch(error => {
-                alert("Lỗi hệ thống: " + error);
-            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Đăng kí thành công");
+                        sessionStorage.idRegister = id
+                        sessionStorage.pwRegister = pw
+                        window.location.href = "/Login";
+                    }
+                    else {
+                        alert("Lỗi: " + data.error);
+                    }
+                })
+                .catch(error => {
+                    alert("Lỗi hệ thống: " + error);
+                })
         }
     </script>
 </body>

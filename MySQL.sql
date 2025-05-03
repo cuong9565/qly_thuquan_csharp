@@ -33,6 +33,7 @@ create table muon_tra_tb(
     time_book datetime not null,
     time_borrow datetime,
     time_return datetime,
+    state varchar(100) character set utf8mb4 default 'Đang đặt chỗ', -- Đang đặt chỗ, Đang mượn, Đã trả, Đã hủy
     
 	foreign key (idTV) references thanh_vien(id),
 	foreign key (idTB) references thiet_bi(id)
