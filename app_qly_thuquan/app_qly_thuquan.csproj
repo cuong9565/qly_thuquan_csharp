@@ -118,6 +118,9 @@
   <ItemGroup>
     <Compile Include="Controllers\ThanhVienController.cs" />
     <Compile Include="Controllers\ThietBiController.cs" />
+    <Compile Include="Controllers\VaoTQController.cs" />
+    <Compile Include="Models\VaoTQ.cs" />
+    <Compile Include="Models\VaoTQModel.cs" />
     <Compile Include="Views\UserControl\ucHistoryLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>

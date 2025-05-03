@@ -40,8 +40,9 @@ namespace qly_thuquan.Model
                     "from thanh_vien " +
                     "where id = @id";
                 DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] {id});
-                foreach (DataRow row in dt.Rows)
-                    tv = new ThanhVien(row);
+
+                if (dt.Rows.Count > 0) tv = new ThanhVien(dt.Rows[0]);
+                else throw new Exception($"Không phải thành viên");
             }
             catch (Exception e)
             {
