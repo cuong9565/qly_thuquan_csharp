@@ -57,7 +57,15 @@
                         <label class="col-form-label" for="txtId">Mã số sinh viên</label>
                     </div>
                     <div class="col-8">
-                        <input type="text" class="form-control" id="txtId" readonly/>
+                        <input type="text" class="form-control" id="txtId" readonly />
+                    </div>
+                </div>
+                <div class="row mb-3 align-items-center">
+                    <div class="col-4 text-end">
+                        <label class="col-form-label" for="txtDateCreate">Ngày đăng ký</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="txtDateCreate" readonly />
                     </div>
                 </div>
                 <div class="row mb-3 align-items-center">
@@ -94,7 +102,7 @@
                 </div>
 
                 <div class="row mb-3 align-items-center">
-                    <button class="btn bg-success text-light fw-bold">Cập nhật</button>
+                    <button class="btn bg-success text-light fw-bold" onclick="UpdateTaiKhoan()">Cập nhật</button>
                 </div>
             </div>
         </div>
@@ -131,5 +139,58 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        window.onload = function () {
+            LoadTaiKhoan()
+        }
+
+        LoadTaiKhoan = function () {
+            fetch('/Home/LoadTaiKhoan', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({})
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        var thanhvien = data.thanhvien;
+                        document.getElementById("txtId").value = thanhvien.Id;
+                        document.getElementById("txtLName").value = thanhvien.LName;
+                        document.getElementById("txtFName").value = thanhvien.FName;
+                        document.getElementById("txtEmail").value = thanhvien.Email;
+                        document.getElementById("txtPhone").value = thanhvien.Phone;
+                        document.getElementById("txtDateCreate").value = thanhvien.FomartedDateCreate;
+                    }
+                    else alert("Lỗi: " + data.error)
+                })
+                .catch(error => {
+                    alert("Lỗi hệ thống: " + error);
+                })
+        }
+
+        UpdateTaiKhoan = function () {
+            var lName = document.getElementById("txtLName").value;
+            var fName = document.getElementById("txtFName").value;
+            var email = document.getElementById("txtEmail").value;
+            var phone = document.getElementById("txtPhone").value;
+            fetch('/Home/UpdateTaiKhoan', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({lName: lName, fName: fName, email: email, phone: phone})
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Cập nhật thông tin thành công")
+                        LoadTaiKhoan()
+                    }
+                    else alert("Lỗi: " + data.error)
+                })
+                .catch(error => {
+                    alert("Lỗi hệ thống: " + error)
+                })
+        }
+    </script>
 </body>
 </html>

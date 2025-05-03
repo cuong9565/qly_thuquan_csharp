@@ -20,9 +20,8 @@ namespace web_qly_thuquan.Controllers
             try
             {
                 if (id == "") return Json(new { success = false, error = "Mã số không được để trống!" });
-                ThanhVien tv = ThanhVienModel.getInstance().Login(id, password);
-                if (tv.GetId() == "") return Json(new { success = false, error = "Mã số hoặc mật khẩu không hợp lệ!" });
-                Session["UserId"] = tv.GetId();
+                ThanhVienModel.getInstance().Login(id, password);
+                Session["UserId"] = id;
             }
             catch (Exception ex) 
             {

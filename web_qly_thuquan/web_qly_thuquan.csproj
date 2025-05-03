@@ -264,7 +264,6 @@
     </Compile>
     <Compile Include="Models\DataProvider.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Controllers\ThanhVienController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Models\ThanhVien.cs" />
     <Compile Include="Models\ThanhVienModel.cs" />

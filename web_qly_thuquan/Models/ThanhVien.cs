@@ -1,61 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 
 namespace web_qly_thuquan.Models
 {
     public class ThanhVien
     {
-        private string id = "";
-        private string lName = "";
-        private string fName = "";
-        private DateTime dateCreate = new DateTime();
-        private string email = "";
-        private string phone = "";
-        private string password = "";
+        // Thuộc tính
+        public string Id { get; set; }
+        public string LName { get; set; }
+        public string FName { get; set; }
+        public DateTime DateCreate { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Password { get; set; }
+        public string FomartedDateCreate {  get; set; }
+
         public ThanhVien() { }
+
         public ThanhVien(string id, string lName, string fName, DateTime dateCreate, string email, string phone, string password)
         {
-            this.id = id;
-            this.lName = lName;
-            this.fName = fName;
-            this.dateCreate = dateCreate.Date;
-            this.email = email;
-            this.phone = phone;
-            this.password = password;
+            Id = id;
+            LName = lName;
+            FName = fName;
+            DateCreate = dateCreate.Date;
+            FomartedDateCreate = DateCreate.ToString("dd/MM/yyyy");
+            Email = email;
+            Phone = phone;
+            Password = password;
         }
+
         public ThanhVien(DataRow row)
         {
-            id = (string)row["id"];
-            lName = (string)row["lName"];
-            fName = (string)row["fName"];
-            dateCreate = (DateTime)row["dateCreate"];
-            email = (string)row["email"];
-            phone = (string)row["phone"];
-            password = (string)row["password"];
+            Id = row["id"] as string ?? "";
+            LName = row["lName"] as string ?? "";
+            FName = row["fName"] as string ?? "";
+            DateCreate = row["dateCreate"] is DBNull ? DateTime.MinValue : (DateTime)row["dateCreate"];
+            FomartedDateCreate = DateCreate.ToString("dd/MM/yyyy");
+            Email = row["email"] as string ?? "";
+            Phone = row["phone"] as string ?? "";
+            Password = row["password"] as string ?? "";
         }
-
-        public string GetId() { return id; }
-        public void SetId(string value) { id = value; }
-
-
-        public string GetlName() { return lName; }
-        public void SetlName(string value) { lName = value; }
-        public string GetfName() { return fName; }
-        public void SetfName(string value) { fName = value; }
-
-        public DateTime GetDateCreate() { return dateCreate.Date; }
-        public void SetDateCreate(DateTime value) { dateCreate = value.Date; }
-
-        public string GetEmail() { return email; }
-        public void SetEmail(string value) { email = value; }
-
-        public string GetPhone() { return phone; }
-        public void SetPhone(string value) { phone = value; }
-
-        public string GetPassword() { return password; }
-        public void SetPassword(string value) { password = value; }
     }
 }

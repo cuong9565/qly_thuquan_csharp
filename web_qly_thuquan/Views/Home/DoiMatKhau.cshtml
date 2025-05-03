@@ -65,7 +65,7 @@
                         <label class="col-form-label" for="txtNewPw">Mật khẩu mới</label>
                     </div>
                     <div class="col-8">
-                        <input type="text" class="form-control" id="txtNewPw" />
+                        <input type="password" class="form-control" id="txtNewPw" />
                     </div>
                 </div>
                 <div class="row mb-3 align-items-center">
@@ -73,12 +73,12 @@
                         <label class="col-form-label" for="txtConfirmPw">Xác nhận mật khẩu</label>
                     </div>
                     <div class="col-8">
-                        <input type="text" class="form-control" id="txtConfirmPw" />
+                        <input type="password" class="form-control" id="txtConfirmPw" />
                     </div>
                 </div>
 
                 <div class="row mb-3 align-items-center">
-                    <button class="btn bg-success text-light fw-bold">Đổi mật khẩu</button>
+                    <button class="btn bg-success text-light fw-bold" onclick="ChangePassword()">Đổi mật khẩu</button>
                 </div>
             </div>
         </div>
@@ -114,5 +114,31 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        ChangePassword = function () {
+            var currPW = document.getElementById("txtCurrPw").value;
+            var newPW = document.getElementById("txtNewPw").value;
+            var confirmPW = document.getElementById("txtConfirmPw").value;
+            fetch('/Home/UpdatePassword', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ currPW: currPW, newPW: newPW, confirmPW: confirmPW })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Đổi mật khẩu thành công")
+                        document.getElementById("txtCurrPw").value = ""
+                        document.getElementById("txtNewPw").value = ""
+                        document.getElementById("txtConfirmPw").value = ""
+                    }
+                    else alert("Lỗi: " + data.error)
+                })
+                .catch(error => {
+                    alert("Lỗi hệ thống: " + error)
+                })
+        }
+    </script>
 </body>
 </html>

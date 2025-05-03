@@ -126,4 +126,4 @@ INSERT INTO vao_tq (idTV, time_in) VALUES
 ('78901234', '2025-05-03 08:55:29'),
 ('01123456', '2025-05-03 10:30:47');
 
-select * from vao_tq;
+select * from thanh_vien;
