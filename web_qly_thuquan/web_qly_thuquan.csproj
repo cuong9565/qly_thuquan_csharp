@@ -257,6 +257,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LichSuController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -280,9 +281,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Home\DatCho.cshtml" />
-    <Content Include="Views\Home\LichSu.cshtml" />
     <Content Include="Views\Home\TaiKhoan.cshtml" />
     <Content Include="Views\Home\DoiMatKhau.cshtml" />
+    <Content Include="Views\LichSu\Vao.cshtml" />
+    <Content Include="Views\LichSu\DatCho.cshtml" />
+    <Content Include="Views\LichSu\ViPham.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -7,7 +7,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/MyCSS/home.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-icons.css" />
-    <title>Lịch sử</title>
+    <title>Lịch sử đặt chỗ mượn thiết bị</title>
 </head>
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top">
@@ -24,7 +24,7 @@
                         <a class="nav-link" href="@Url.Action("DatCho", "Home")">Đặt chỗ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("LichSu", "Home")">Lịch sử</a>
+                        <a class="nav-link active" href="@Url.Action("Vao", "LichSu")">Lịch sử</a>
                     </li>
                 </ul>
             </div>
@@ -45,18 +45,18 @@
     </nav>
 
     @* ...CONTAINER... *@
-    <div class="container d-flex flex-column align-items-center" style="min-height: 90vh">
-        <div class="w-75 bg-white rounded shadow-sm m-3 p-4">
+    <div class="container d-flex justify-content-center" style="min-height: 90vh">
+        <div class="w-75 bg-white rounded shadow m-3 p-4">
             @* ...NAVBAR HISTORY... *@
             <div class="nav nav-pills nav-fill">
                 <div class="nav-item">
-                    <a href="#" class="nav-link active">Lịch sử ra vào thư quán</a>
+                    <a href="@Url.Action("Vao", "LichSu")" class="nav-link">Lịch sử vào thư quán</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#" class="nav-link">Lịch sử mượn thiết bị</a>
+                    <a href="@Url.Action("DatCho", "LichSu")" class="nav-link active">Lịch sử đặt chỗ mượn thiết bị</a>
                 </div>
                 <div class="nav-item">
-                    <a href="#" class="nav-link">Lịch sử vi phạm</a>
+                    <a href="@Url.Action("ViPham", "LichSu")" class="nav-link">Lịch sử vi phạm</a>
                 </div>
             </div>
 

@@ -7,7 +7,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/MyCSS/home.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-icons.css" />
-    <title>Trang chủ</title>
+    <title>Lịch sử vào thư quán</title>
 </head>
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top">
@@ -18,13 +18,13 @@
             <div>
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("Index", "Home")">Trang chủ</a>
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">Trang chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("DatCho", "Home")">Đặt chỗ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Vao", "LichSu")">Lịch sử</a>
+                        <a class="nav-link active" href="@Url.Action("Vao", "LichSu")">Lịch sử</a>
                     </li>
                 </ul>
             </div>
@@ -44,14 +44,40 @@
         </div>
     </nav>
 
+    @* ...CONTAINER... *@
+    <div class="container d-flex justify-content-center" style="min-height: 90vh">
+        <div class="w-75 bg-white rounded shadow m-3 p-4">
+            @* ...NAVBAR HISTORY... *@
+            <div class="nav nav-pills nav-fill">
+                <div class="nav-item">
+                    <a href="@Url.Action("Vao", "LichSu")" class="nav-link active">Lịch sử vào thư quán</a>
+                </div>
+                <div class="nav-item">
+                    <a href="@Url.Action("DatCho", "LichSu")" class="nav-link">Lịch sử đặt chỗ mượn thiết bị</a>
+                </div>
+                <div class="nav-item">
+                    <a href="@Url.Action("ViPham", "LichSu")" class="nav-link">Lịch sử vi phạm</a>
+                </div>
+            </div>
 
-    <div class="main">
-        <div>
-            <h1 class="text-success">Chào mừng bạn đến với</h1>
-            <h2 class="text-success">Thư Quán</h2>
+            @* ...SEARCH... *@
+            <div class="d-flex gap-5 mt-3">
+                <select class="form-select w-auto">
+                    <option selected>Mã số</option>
+                    <option>Tên</option>
+                    <option>Ngày</option>
+                    <option>Loại thiết bị</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm">
+                <button class="btn btn-outline-secondary fst-italic w-25">Làm mới</button>
+            </div>
+
+            @*...RESULT*@
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 60vh">
+                <h1>Không có thông tin</h1>
+            </div>
         </div>
     </div>
-
 
     <footer class="text-center">
         <div class="container-fluid">

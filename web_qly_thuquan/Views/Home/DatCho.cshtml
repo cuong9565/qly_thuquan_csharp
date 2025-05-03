@@ -24,7 +24,7 @@
                         <a class="nav-link active" href="@Url.Action("DatCho", "Home")">Đặt chỗ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("LichSu", "Home")">Lịch sử</a>
+                        <a class="nav-link" href="@Url.Action("Vao", "LichSu")">Lịch sử</a>
                     </li>
                 </ul>
             </div>
@@ -43,11 +43,26 @@
             </div>
         </div>
     </nav>
-    
-    <div class="main">
-        <div>
-            <h1 class="text-success">Chào mừng bạn đến với</h1>
-            <h2 class="text-success">Thư Quán</h2>
+
+    @* ...CONTAINER... *@
+    <div class="container d-flex justify-content-center" style="min-height: 90vh">
+        <div class="w-75 bg-white rounded shadow m-3 p-4">
+            @* ...SEARCH... *@
+            <div class="d-flex gap-5 mt-3">
+                <select class="form-select w-auto">
+                    <option selected>Mã số</option>
+                    <option>Tên</option>
+                    <option>Ngày</option>
+                    <option>Loại thiết bị</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm">
+                <button class="btn btn-outline-secondary fst-italic w-25">Làm mới</button>
+            </div>
+
+            @*...RESULT*@
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh">
+                <h1>Không có thông tin</h1>
+            </div>
         </div>
     </div>
 
