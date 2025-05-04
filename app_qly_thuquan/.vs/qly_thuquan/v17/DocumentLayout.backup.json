@@ -3,24 +3,22 @@
   "WorkspaceRootPath": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\app_qly_thuquan\\views\\usercontrol\\uclichsuvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|solutionrelative:views\\usercontrol\\uclichsuvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\app_qly_thuquan\\views\\usercontrol\\uclichsuvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|solutionrelative:views\\usercontrol\\uclichsuvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\views\\lichsu\\vipham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\app_qly_thuquan\\views\\usercontrol\\ucqlythanhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|solutionrelative:views\\usercontrol\\ucqlythanhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\app_qly_thuquan\\views\\usercontrol\\ucvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|solutionrelative:views\\usercontrol\\ucvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\app_qly_thuquan\\views\\usercontrol\\ucqlythanhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4C31865-EC8C-42C9-A034-EF7BDEA13290}|app_qly_thuquan.csproj|solutionrelative:views\\usercontrol\\ucqlythanhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\models\\viphammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39947288-2F25-4160-AEEF-B57D03717340}|..\\web_qly_thuquan\\web_qly_thuquan.csproj|d:\\qly_thuquan_csharp\\web_qly_thuquan\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 324,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,66 +36,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ucQlyThanhVien.cs [Design]",
-              "DocumentMoniker": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucQlyThanhVien.cs",
-              "RelativeDocumentMoniker": "Views\\UserControl\\ucQlyThanhVien.cs",
-              "ToolTip": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucQlyThanhVien.cs [Design]*",
-              "RelativeToolTip": "Views\\UserControl\\ucQlyThanhVien.cs [Design]*",
+              "DocumentIndex": 4,
+              "Title": "ViPhamModel.cs",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Models\\ViPhamModel.cs",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Models\\ViPhamModel.cs",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Models\\ViPhamModel.cs",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Models\\ViPhamModel.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwC8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:09:38.347Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ucViPham.cs",
-              "DocumentMoniker": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucViPham.cs",
-              "RelativeDocumentMoniker": "Views\\UserControl\\ucViPham.cs",
-              "ToolTip": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucViPham.cs",
-              "RelativeToolTip": "Views\\UserControl\\ucViPham.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAQwE8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T07:48:27.514Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ucLichSuViPham.cs",
-              "DocumentMoniker": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucLichSuViPham.cs",
-              "RelativeDocumentMoniker": "Views\\UserControl\\ucLichSuViPham.cs",
-              "ToolTip": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucLichSuViPham.cs",
-              "RelativeToolTip": "Views\\UserControl\\ucLichSuViPham.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAswEAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T07:45:32.697Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T16:26:54.929Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ucLichSuViPham.cs [Design]",
-              "DocumentMoniker": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucLichSuViPham.cs",
-              "RelativeDocumentMoniker": "Views\\UserControl\\ucLichSuViPham.cs",
-              "ToolTip": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucLichSuViPham.cs [Design]",
-              "RelativeToolTip": "Views\\UserControl\\ucLichSuViPham.cs [Design]",
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Controllers\\LoginController.cs",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T07:45:21.616Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-04T16:26:19.125Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ucQlyThanhVien.cs",
-              "DocumentMoniker": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucQlyThanhVien.cs",
-              "RelativeDocumentMoniker": "Views\\UserControl\\ucQlyThanhVien.cs",
-              "ToolTip": "D:\\qly_thuquan_csharp\\app_qly_thuquan\\Views\\UserControl\\ucQlyThanhVien.cs*",
-              "RelativeToolTip": "Views\\UserControl\\ucQlyThanhVien.cs*",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAwwJAAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T08:09:40.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T16:26:08.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T16:26:05.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Views\\Login\\Index.cshtml",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T16:25:52.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ViPham.cshtml",
+              "DocumentMoniker": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\LichSu\\ViPham.cshtml",
+              "RelativeDocumentMoniker": "..\\web_qly_thuquan\\Views\\LichSu\\ViPham.cshtml",
+              "ToolTip": "D:\\qly_thuquan_csharp\\web_qly_thuquan\\Views\\LichSu\\ViPham.cshtml",
+              "RelativeToolTip": "..\\web_qly_thuquan\\Views\\LichSu\\ViPham.cshtml",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAgwHcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T16:06:38.358Z"
             }
           ]
         }

@@ -116,10 +116,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\MuonTraTBController.cs" />
     <Compile Include="Controllers\ThanhVienController.cs" />
     <Compile Include="Controllers\ThietBiController.cs" />
     <Compile Include="Controllers\VaoTQController.cs" />
     <Compile Include="Controllers\ViPhamController.cs" />
+    <Compile Include="Models\MuonTraTB.cs" />
+    <Compile Include="Models\MuonTraTBModel.cs" />
     <Compile Include="Models\VaoTQ.cs" />
     <Compile Include="Models\VaoTQModel.cs" />
     <Compile Include="Models\ViPham.cs" />

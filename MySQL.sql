@@ -15,7 +15,7 @@ create table thanh_vien(
 create table thiet_bi(
 	id varchar(100) character set utf8mb4 primary key,
 	name varchar(100) character set utf8mb4,
-	state varchar(100) character set utf8mb4 default 'Sẵn sàng' -- Sẵn sàng, Đang mượn, Hỏng
+	state varchar(100) character set utf8mb4 default 'Sẵn sàng' -- Sẵn sàng, Đang đặt chỗ, Đang mượn, Hỏng
 );
 
 create table vao_tq(
@@ -30,7 +30,7 @@ create table muon_tra_tb(
 	id int auto_increment primary key,
     idTV varchar(100) character set utf8mb4 not null,
     idTB varchar(100) character set utf8mb4 not null,
-    time_book datetime not null,
+    time_book datetime not null default(current_time()),
     time_borrow datetime,
     time_return datetime,
     state varchar(100) character set utf8mb4 default 'Đang đặt chỗ', -- Đang đặt chỗ, Đang mượn, Đã trả, Đã hủy
@@ -142,4 +142,12 @@ INSERT INTO vao_tq (idTV, time_in) VALUES
 ('0789012345', '2025-05-03 08:55:29'),
 ('0011234567', '2025-05-03 10:30:47');
 
--- select * from vao_thu;
+select * from muon_tra_tb;
+
+select * 
+from muon_tra_tb 
+join thiet_bi tb on idTB = tb.id;
+
+select *
+from vao_tq
+order by time_in desc

@@ -21,6 +21,7 @@ namespace web_qly_thuquan.Controllers
             {
                 if (id == "") return Json(new { success = false, error = "Mã số không được để trống!" });
                 ThanhVienModel.getInstance().Login(id, password);
+                ViPhamModel.getInstance().checkViPham(id);
                 Session["UserId"] = id;
             }
             catch (Exception ex) 

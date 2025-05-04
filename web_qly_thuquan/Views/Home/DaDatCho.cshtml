@@ -4,10 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/Content/MyCSS/home.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-icons.css" />
-    <title>Lịch sử vào thư quán</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/MyCSS/home.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-icons.css")" rel="stylesheet" />
+
+    <title>Danh sách đã đặt</title>
 </head>
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top">
@@ -21,10 +22,10 @@
                         <a class="nav-link" href="@Url.Action("Index", "Home")">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("DatCho", "Home")">Đặt chỗ</a>
+                        <a class="nav-link active" href="@Url.Action("DatCho", "Home")">Đặt chỗ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Action("Vao", "LichSu")">Lịch sử</a>
+                        <a class="nav-link" href="@Url.Action("Vao", "LichSu")">Lịch sử</a>
                     </li>
                 </ul>
             </div>
@@ -47,16 +48,13 @@
     @* ...CONTAINER... *@
     <div class="container d-flex justify-content-center" style="min-height: 90vh">
         <div class="w-75 bg-white rounded shadow m-3 p-4">
-            @* ...NAVBAR HISTORY... *@
+            @* ...NAVBAR DATCHO... *@
             <div class="nav nav-pills nav-fill">
                 <div class="nav-item">
-                    <a href="@Url.Action("Vao", "LichSu")" class="nav-link active">Lịch sử vào thư quán</a>
+                    <a href="@Url.Action("DatCho", "Home")" class="nav-link">Danh sách thiết bị hợp lệ</a>
                 </div>
                 <div class="nav-item">
-                    <a href="@Url.Action("DatCho", "LichSu")" class="nav-link">Lịch sử đặt chỗ mượn thiết bị</a>
-                </div>
-                <div class="nav-item">
-                    <a href="@Url.Action("ViPham", "LichSu")" class="nav-link">Lịch sử vi phạm</a>
+                    <a href="@Url.Action("DaDatCho", "Home")" class="nav-link active">Danh sách thiết bị đã đặt</a>
                 </div>
             </div>
 
@@ -64,19 +62,19 @@
             <div class="d-flex gap-5 mt-3">
                 <select class="form-select w-auto" id="mySelect">
                     <option selected>Mã số</option>
-                    <option>Thời gian</option>
+                    <option>Tên</option>
                 </select>
                 <input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm" id="searchInput">
                 <button class="btn btn-outline-secondary fst-italic w-25" id="refreshBtn">Làm mới</button>
             </div>
 
-
             @*...RESULT*@
             <table class="table table-bordered table-hover text-center mt-4">
                 <thead class="table-light">
                     <tr>
-                        <th>Mã số</th>
-                        <th>Thời gian vào</th>
+                        <th>Mã thiết bị</th>
+                        <th>Tên thiết bị</th>
+                        <th>Hành động</th>
                     </tr>
                 </thead>
                 <tbody id="danh-sach">
@@ -87,6 +85,7 @@
             <div id="pagination" class="text-center mt-3">
                 @*...Phân trang...*@
             </div>
+
         </div>
     </div>
 
@@ -134,7 +133,7 @@
             const selectedOption = selectElement.options[selectElement.selectedIndex];
             var col = selectedOption.text;
             var txt = document.getElementById('searchInput').value;
-            fetch('/LichSu/LoadVaoTQ', {
+            fetch('/Home/GetListDaDatCho', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ col: col, txt: txt })
@@ -154,6 +153,23 @@
                 .catch(error => alert("Lỗi hệ thống: " + error));
         }
 
+        function huyDatCho(idTB) {
+            fetch('/Home/HuyDatCho', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ idTB: idTB })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Hủy chỗ thành công!!!")
+                        load()
+                    } else {
+                        alert("Lỗi: " + data.error);
+                    }
+                })
+                .catch(error => alert("Lỗi hệ thống: " + error));
+        }
 
         // Phan trang
         function displayItem(page) {
@@ -164,11 +180,14 @@
             let html = document.getElementById('danh-sach');
             html.innerHTML = currItem.map(x =>
                 `
-            <tr>
-                <td>${x.Id}</td>
-                <td>${x.FomartTimeIn}</td>
-            </tr>
-            `
+        <tr>
+            <td>${x.Id}</td>
+            <td>${x.Name}</td>
+            <td>
+                <button class="btn btn-sm btn-danger" onclick="huyDatCho('${x.Id}')">Hủy</button>
+            </td>
+        </tr>
+        `
             ).join('');
         }
 
@@ -178,16 +197,16 @@
 
             if (currPage > 1)
                 html += `<button onclick="changePage(${currPage - 1})" class="btn btn-sm btn-outline-secondary me-1">
-                        <i class="bi bi-arrow-left"></i>
-                     </button>`;
+                    <i class="bi bi-arrow-left"></i>
+                 </button>`;
 
             for (let i = 1; i <= totalPage; i++)
                 html += `<button onclick="changePage(${i})" class="btn btn-sm ${currPage === i ? 'btn-primary' : 'btn-outline-secondary'} me-1">${i}</button>`;
 
             if (currPage < totalPage)
                 html += `<button onclick="changePage(${currPage + 1})" class="btn btn-sm btn-outline-secondary">
-                        <i class="bi bi-arrow-right"></i>
-                     </button>`;
+                    <i class="bi bi-arrow-right"></i>
+                 </button>`;
 
             pag.innerHTML = html;
         }

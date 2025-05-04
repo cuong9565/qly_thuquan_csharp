@@ -60,22 +60,45 @@
                 </div>
             </div>
 
+
             @* ...SEARCH... *@
             <div class="d-flex gap-5 mt-3">
-                <select class="form-select w-auto">
+                <select class="form-select w-auto" id="mySelect">
                     <option selected>Mã số</option>
-                    <option>Tên</option>
-                    <option>Ngày</option>
-                    <option>Loại thiết bị</option>
+                    <option>Mã thiết bị</option>
+                    <option>Thời gian đặt</option>
+                    <option>Thời gian mượn</option>
+                    <option>Thời gian trả</option>
+                    <option>Trạng thái</option>
                 </select>
-                <input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm">
-                <button class="btn btn-outline-secondary fst-italic w-25">Làm mới</button>
+                <input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm" id="searchInput">
+                <button class="btn btn-outline-secondary fst-italic w-25" id="refreshBtn">Làm mới</button>
             </div>
 
+
             @*...RESULT*@
-            <div class="d-flex justify-content-center align-items-center" style="min-height: 60vh">
-                <h1>Không có thông tin</h1>
+            <table class="table table-bordered table-hover text-center mt-4">
+                <thead class="table-light">
+                    <tr>
+                        <th>Mã số</th>
+                        <th>Mã thiết bị</th>
+                        <th>Thời gian đặt</th>
+                        <th>Thời gian mượn</th>
+                        <th>Thời gian trả</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+
+                <tbody id="danh-sach">
+                    @*...Đổ dữ liệu...*@
+                </tbody>
+            </table>
+
+            <div id="pagination" class="text-center mt-3">
+                @*...Phân trang...*@
             </div>
+
+
         </div>
     </div>
 
@@ -108,5 +131,107 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let allItem = [];
+        let itemPerPage = 7;
+        let totalPage = 1;
+        let currPage = 1;
+
+        window.onload = function () {
+            load()
+        }
+
+        var load = function () {
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            var col = selectedOption.text;
+            var txt = document.getElementById('searchInput').value;
+            fetch('/LichSu/LichSuDatCho', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ col: col, txt: txt })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        allItem = data.res;
+                        totalPage = Math.ceil(allItem.length / itemPerPage);
+                        currPage = 1;
+                        displayItem(currPage);
+                        displayPagination();
+                    } else {
+                        alert("Lỗi: " + data.error);
+                    }
+                })
+                .catch(error => alert("Lỗi hệ thống: " + error));
+        }
+
+
+        // Phan trang
+        function displayItem(page) {
+            let start = (page - 1) * itemPerPage;
+            let end = start + itemPerPage;
+            let currItem = allItem.slice(start, end);
+
+            let html = document.getElementById('danh-sach');
+            html.innerHTML = currItem.map(x =>
+                `
+            <tr>
+                <td>${x.Id}</td>
+                <td>${x.IdTB}</td>
+                <td>${x.FomartedTimeBook}</td>
+                <td>${x.FomartedTimeBorrow}</td>
+                <td>${x.FomartedTimeReturn}</td>
+                <td>${x.State}</td>
+            </tr>
+            `
+            ).join('');
+        }
+
+        function displayPagination() {
+            let pag = document.getElementById('pagination');
+            let html = '';
+
+            if (currPage > 1)
+                html += `<button onclick="changePage(${currPage - 1})" class="btn btn-sm btn-outline-secondary me-1">
+                        <i class="bi bi-arrow-left"></i>
+                     </button>`;
+
+            for (let i = 1; i <= totalPage; i++)
+                html += `<button onclick="changePage(${i})" class="btn btn-sm ${currPage === i ? 'btn-primary' : 'btn-outline-secondary'} me-1">${i}</button>`;
+
+            if (currPage < totalPage)
+                html += `<button onclick="changePage(${currPage + 1})" class="btn btn-sm btn-outline-secondary">
+                        <i class="bi bi-arrow-right"></i>
+                     </button>`;
+
+            pag.innerHTML = html;
+        }
+
+        function changePage(page) {
+            currPage = page;
+            displayItem(currPage);
+            displayPagination();
+        }
+
+        // Them Event
+        const selectElement = document.getElementById("mySelect");
+        selectElement.addEventListener("change", function () {
+            load()
+        });
+
+        const input = document.getElementById("searchInput");
+        input.addEventListener("input", function () {
+            load()
+        });
+
+        const button = document.getElementById("refreshBtn");
+        button.addEventListener("click", function () {
+            input.value = "";
+            document.getElementById("mySelect").selectedIndex = 0;
+            load()
+        });
+
+    </script>
 </body>
 </html>
