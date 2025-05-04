@@ -21,9 +21,24 @@ namespace qly_thuquan.Model
             try
             {
                 string sql =
-                    "select tv.id as 'Mã số', tv.lName as 'Họ', tv.fName as 'Tên', dateCreate as 'Ngày đăng ký', email as 'Email', phone as 'Số điện thoại', password as 'Mật khẩu'" +
+                    "select tv.id as 'Mã số', tv.lName as 'Họ', tv.fName as 'Tên', dateCreate as 'Ngày đăng ký', email as 'Email', phone as 'Số điện thoại' " +
                     "from thanh_vien tv";
                 return DataProvider.getInstance().ExecuteQuery(sql);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public DataTable getDTById(string id)
+        {
+            try
+            {
+                string sql =
+                    "select tv.id as 'Mã số', tv.lName as 'Họ', tv.fName as 'Tên', dateCreate as 'Ngày đăng ký', email as 'Email', phone as 'Số điện thoại'" +
+                    "from thanh_vien tv " +
+                    "where id = @id";
+                return DataProvider.getInstance().ExecuteQuery(sql, new object[] {id});
             }
             catch (Exception e)
             {
@@ -40,9 +55,7 @@ namespace qly_thuquan.Model
                     "from thanh_vien " +
                     "where id = @id";
                 DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] {id});
-
                 if (dt.Rows.Count > 0) tv = new ThanhVien(dt.Rows[0]);
-                else throw new Exception($"Không phải thành viên");
             }
             catch (Exception e)
             {

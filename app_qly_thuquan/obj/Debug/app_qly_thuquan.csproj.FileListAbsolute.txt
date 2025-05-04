@@ -63,3 +63,4 @@ D:\qly_thuquan_csharp\app_qly_thuquan\obj\Debug\app_qly_thuquan.csproj.CoreCompi
 D:\qly_thuquan_csharp\app_qly_thuquan\obj\Debug\app_qly_.5EF9E4D2.Up2Date
 D:\qly_thuquan_csharp\app_qly_thuquan\obj\Debug\qly_thuquan.exe
 D:\qly_thuquan_csharp\app_qly_thuquan\obj\Debug\qly_thuquan.pdb
+D:\qly_thuquan_csharp\app_qly_thuquan\obj\Debug\qly_thuquan.ucLichSuViPham.resources

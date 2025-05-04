@@ -33,14 +33,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLishSuViPham = new System.Windows.Forms.Button();
+            this.btnHistoryLogin = new System.Windows.Forms.Button();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnViPham = new System.Windows.Forms.Button();
+            this.btnMuonThietBi = new System.Windows.Forms.Button();
+            this.btnVaoThuQuan = new System.Windows.Forms.Button();
             this.btnQlyThietBi = new System.Windows.Forms.Button();
             this.btnQlyThanhVien = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnVaoThuQuan = new System.Windows.Forms.Button();
-            this.btnMuonThietBi = new System.Windows.Forms.Button();
-            this.btnViPham = new System.Windows.Forms.Button();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnHistoryLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnLeft.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -89,6 +90,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnLishSuViPham);
             this.panel2.Controls.Add(this.btnHistoryLogin);
             this.panel2.Controls.Add(this.btnThongKe);
             this.panel2.Controls.Add(this.btnViPham);
@@ -102,6 +104,72 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 953);
             this.panel2.TabIndex = 0;
+            // 
+            // btnLishSuViPham
+            // 
+            this.btnLishSuViPham.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLishSuViPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLishSuViPham.Location = new System.Drawing.Point(0, 680);
+            this.btnLishSuViPham.Name = "btnLishSuViPham";
+            this.btnLishSuViPham.Size = new System.Drawing.Size(200, 80);
+            this.btnLishSuViPham.TabIndex = 10;
+            this.btnLishSuViPham.Text = "Lịch sử vi phạm";
+            this.btnLishSuViPham.UseVisualStyleBackColor = true;
+            // 
+            // btnHistoryLogin
+            // 
+            this.btnHistoryLogin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHistoryLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistoryLogin.Location = new System.Drawing.Point(0, 600);
+            this.btnHistoryLogin.Name = "btnHistoryLogin";
+            this.btnHistoryLogin.Size = new System.Drawing.Size(200, 80);
+            this.btnHistoryLogin.TabIndex = 9;
+            this.btnHistoryLogin.Text = "Lịch sử vào thư quán";
+            this.btnHistoryLogin.UseVisualStyleBackColor = true;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.Location = new System.Drawing.Point(0, 520);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(200, 80);
+            this.btnThongKe.TabIndex = 8;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            // 
+            // btnViPham
+            // 
+            this.btnViPham.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViPham.Location = new System.Drawing.Point(0, 440);
+            this.btnViPham.Name = "btnViPham";
+            this.btnViPham.Size = new System.Drawing.Size(200, 80);
+            this.btnViPham.TabIndex = 7;
+            this.btnViPham.Text = "Quản lý vi phạm";
+            this.btnViPham.UseVisualStyleBackColor = true;
+            // 
+            // btnMuonThietBi
+            // 
+            this.btnMuonThietBi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMuonThietBi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMuonThietBi.Location = new System.Drawing.Point(0, 340);
+            this.btnMuonThietBi.Name = "btnMuonThietBi";
+            this.btnMuonThietBi.Size = new System.Drawing.Size(200, 100);
+            this.btnMuonThietBi.TabIndex = 5;
+            this.btnMuonThietBi.Text = "Mượn thiết bị";
+            this.btnMuonThietBi.UseVisualStyleBackColor = true;
+            // 
+            // btnVaoThuQuan
+            // 
+            this.btnVaoThuQuan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVaoThuQuan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVaoThuQuan.Location = new System.Drawing.Point(0, 240);
+            this.btnVaoThuQuan.Name = "btnVaoThuQuan";
+            this.btnVaoThuQuan.Size = new System.Drawing.Size(200, 100);
+            this.btnVaoThuQuan.TabIndex = 4;
+            this.btnVaoThuQuan.Text = "Vào thư quán";
+            this.btnVaoThuQuan.UseVisualStyleBackColor = true;
             // 
             // btnQlyThietBi
             // 
@@ -136,61 +204,6 @@
             this.btnHome.Text = "Trang chủ";
             this.btnHome.UseVisualStyleBackColor = true;
             // 
-            // btnVaoThuQuan
-            // 
-            this.btnVaoThuQuan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVaoThuQuan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVaoThuQuan.Location = new System.Drawing.Point(0, 240);
-            this.btnVaoThuQuan.Name = "btnVaoThuQuan";
-            this.btnVaoThuQuan.Size = new System.Drawing.Size(200, 100);
-            this.btnVaoThuQuan.TabIndex = 4;
-            this.btnVaoThuQuan.Text = "Vào thư quán";
-            this.btnVaoThuQuan.UseVisualStyleBackColor = true;
-            // 
-            // btnMuonThietBi
-            // 
-            this.btnMuonThietBi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMuonThietBi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMuonThietBi.Location = new System.Drawing.Point(0, 340);
-            this.btnMuonThietBi.Name = "btnMuonThietBi";
-            this.btnMuonThietBi.Size = new System.Drawing.Size(200, 100);
-            this.btnMuonThietBi.TabIndex = 5;
-            this.btnMuonThietBi.Text = "Mượn thiết bị";
-            this.btnMuonThietBi.UseVisualStyleBackColor = true;
-            // 
-            // btnViPham
-            // 
-            this.btnViPham.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViPham.Location = new System.Drawing.Point(0, 440);
-            this.btnViPham.Name = "btnViPham";
-            this.btnViPham.Size = new System.Drawing.Size(200, 80);
-            this.btnViPham.TabIndex = 7;
-            this.btnViPham.Text = "Quản lý vi phạm";
-            this.btnViPham.UseVisualStyleBackColor = true;
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.Location = new System.Drawing.Point(0, 520);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(200, 80);
-            this.btnThongKe.TabIndex = 8;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = true;
-            // 
-            // btnHistoryLogin
-            // 
-            this.btnHistoryLogin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHistoryLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistoryLogin.Location = new System.Drawing.Point(0, 600);
-            this.btnHistoryLogin.Name = "btnHistoryLogin";
-            this.btnHistoryLogin.Size = new System.Drawing.Size(200, 80);
-            this.btnHistoryLogin.TabIndex = 9;
-            this.btnHistoryLogin.Text = "Lịch sử vào thư quán";
-            this.btnHistoryLogin.UseVisualStyleBackColor = true;
-            // 
             // fMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -223,5 +236,6 @@
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnViPham;
         private System.Windows.Forms.Button btnHistoryLogin;
+        private System.Windows.Forms.Button btnLishSuViPham;
     }
 }

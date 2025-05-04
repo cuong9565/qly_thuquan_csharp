@@ -226,10 +226,8 @@
             "Mã số",
             "Họ",
             "Tên",
-            "Ngày đăng ký",
             "Email",
-            "Số điện thoại",
-            "Mật khẩu"});
+            "Số điện thoại"});
             this.cbSearch.Location = new System.Drawing.Point(50, 35);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.Size = new System.Drawing.Size(150, 27);

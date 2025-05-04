@@ -119,8 +119,17 @@
     <Compile Include="Controllers\ThanhVienController.cs" />
     <Compile Include="Controllers\ThietBiController.cs" />
     <Compile Include="Controllers\VaoTQController.cs" />
+    <Compile Include="Controllers\ViPhamController.cs" />
     <Compile Include="Models\VaoTQ.cs" />
     <Compile Include="Models\VaoTQModel.cs" />
+    <Compile Include="Models\ViPham.cs" />
+    <Compile Include="Models\ViPhamModel.cs" />
+    <Compile Include="Views\UserControl\ucLichSuViPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControl\ucLichSuViPham.Designer.cs">
+      <DependentUpon>ucLichSuViPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControl\ucHistoryLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,6 +215,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\UserControl\ucLichSuViPham.resx">
+      <DependentUpon>ucLichSuViPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControl\ucHistoryLogin.resx">
       <DependentUpon>ucHistoryLogin.cs</DependentUpon>
     </EmbeddedResource>

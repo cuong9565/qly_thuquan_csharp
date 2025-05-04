@@ -23,6 +23,7 @@ namespace qly_thuquan
             btnVaoThuQuan.Click += (s, e) => showUserControl(new ucVaoThuQuan());
             btnViPham.Click += (s, e) => showUserControl(new ucViPham());
             btnHistoryLogin.Click += (s, e) => showUserControl(new ucHistoryLogin());
+            btnLishSuViPham.Click += (s, e) => showUserControl(new ucLichSuViPham());
         }
         private void showUserControl(UserControl uc)
         {

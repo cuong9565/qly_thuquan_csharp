@@ -30,12 +30,24 @@ namespace qly_thuquan.Controller
             }
             return dt;
         }
+        public DataTable getDTById(string id)
+        {
+            try
+            {
+                return ThanhVienModel.getInstance().getDTById(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
         public ThanhVien getById(string id)
         {
             ThanhVien tv = new ThanhVien();
             try
             {
                 tv = ThanhVienModel.getInstance().getById(id);
+                if (tv.GetId() == "") throw new Exception("Không phải thành viên!");
             }
             catch (Exception ex)
             {

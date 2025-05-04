@@ -21,9 +21,9 @@ namespace qly_thuquan.Model
         }
         public ThietBi(DataRow row)
         {
-            id = (string)row["id"];
-            name = (string)row["name"];
-            state = (string)row["state"];
+            id = (string)row["thiet_bi.id"];
+            name = (string)row["thiet_bi.name"];
+            state = (string)row["thiet_bi.state"];
         }
         public string getId() { return id; }
         public string getName() { return name; }
