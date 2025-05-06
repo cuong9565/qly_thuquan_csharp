@@ -27,7 +27,6 @@ namespace qly_thuquan
             txbDateCreate.Text = tv.GetDateCreate().ToString("dd/MM/yyyy");
             txbEmail.Text = tv.GetEmail();
             txbPhone.Text = tv.GetPhone();
-            txbPassword.Text = tv.GetPassword();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

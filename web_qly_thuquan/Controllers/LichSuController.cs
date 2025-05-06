@@ -59,7 +59,7 @@ namespace web_qly_thuquan.Controllers
                 string idTV = (string)Session["UserId"];
 
                 foreach (MuonTra mt in MuonTraModel.getInstance().getAll())
-                    if (mt.IdTV == mt.IdTV)
+                    if (idTV == mt.IdTV)
                     {
                         switch (col)
                         {

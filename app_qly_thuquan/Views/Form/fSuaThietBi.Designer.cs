@@ -111,12 +111,12 @@
             this.cbbState.FormattingEnabled = true;
             this.cbbState.Items.AddRange(new object[] {
             "Sẵn sàng",
-            "Đang mượn",
             "Bị hỏng"});
             this.cbbState.Location = new System.Drawing.Point(213, 152);
             this.cbbState.Name = "cbbState";
             this.cbbState.Size = new System.Drawing.Size(426, 30);
             this.cbbState.TabIndex = 5;
+            this.cbbState.SelectedIndexChanged += new System.EventHandler(this.cbbState_SelectedIndexChanged);
             // 
             // label6
             // 

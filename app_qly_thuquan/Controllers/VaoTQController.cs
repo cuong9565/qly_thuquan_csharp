@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using qly_thuquan.Controller;
+using qly_thuquan.Model;
 using qly_thuquan.Models;
 
 namespace qly_thuquan.Controllers
@@ -21,7 +23,19 @@ namespace qly_thuquan.Controllers
         {
             try
             {
+                ViPhamModel.getInstance().checkViPham(idTV);
                 VaoTQModel.getInstance().insert(idTV, dt);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public DataTable getAll()
+        {
+            try
+            {
+                return VaoTQModel.getInstance().getAll();
             }
             catch (Exception e)
             {

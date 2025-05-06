@@ -30,6 +30,19 @@ namespace qly_thuquan.Controller
             }
             return dt;
         }
+        public List<ThanhVien> getAllListByYear(int year)
+        {
+            List<ThanhVien> tv = new List<ThanhVien>();
+            try
+            {
+                tv = ThanhVienModel.getInstance().getAllListByYear(year);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return tv;
+        }
         public DataTable getDTById(string id)
         {
             try
@@ -98,18 +111,17 @@ namespace qly_thuquan.Controller
                 throw new Exception(ex.Message);
             }
         }
-        public int deleteByYear(int year)
+
+        public void resetPassword(string id)
         {
-            int res = 0;
             try
             {
-                res = ThanhVienModel.getInstance().deleteByYear(year);
+                ThanhVienModel.getInstance().resetPassword(id);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return res;
         }
     }
 }

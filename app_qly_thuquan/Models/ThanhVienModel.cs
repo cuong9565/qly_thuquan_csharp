@@ -30,6 +30,27 @@ namespace qly_thuquan.Model
                 throw new Exception(e.Message);
             }
         }
+        public List<ThanhVien> getAllListByYear(int year)
+        {
+            List<ThanhVien> list = new List<ThanhVien>();
+            try
+            {
+                string sql =
+                    "select * " +
+                    "from thanh_vien tv " +
+                    "where year(dateCreate) = @dateCreate";
+                DataTable dt =  DataProvider.getInstance().ExecuteQuery(sql, new object[] {year});
+                foreach (DataRow dr in dt.Rows) {
+                    list.Add(new ThanhVien(dr));
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return list;
+        }
+
         public DataTable getDTById(string id)
         {
             try
@@ -114,21 +135,19 @@ namespace qly_thuquan.Model
                 throw new Exception(e.Message);
             }
         }
-        public int deleteByYear(int year)
+        public void resetPassword(string id)
         {
-            int res = 0;
             try
             {
                 string sql =
-                    "delete from thanh_vien " +
-                    "where year(dateCreate) = @dateCreate";
-                res = DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { year });
+                    "update thanh_vien set password = '' " +
+                    "where id = @id";
+                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { id });
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-            return res;
         }
     }
 }

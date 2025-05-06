@@ -17,6 +17,68 @@ namespace qly_thuquan.Models
             if (instance == null) instance = new MuonTraTBModel();
             return instance;
         }
+        public DataTable LoadDataTable()
+        {
+            try
+            {
+                string sql =
+                    "select tb.id as 'Mã thiết bị', tv.id 'Mã thành viên', mt.time_book as 'Thời gian đặt', mt.time_borrow  as 'Thời gian mượn', mt.time_return as 'Thời gian trả', mt.state as 'Trạng thái' " +
+                    "from muon_tra_tb mt " +
+                    "join thanh_vien tv on mt.idTV = tv.id " +
+                    "join thiet_bi tb on mt.idTB = tb.id " +
+                    "order by mt.id desc";
+                return DataProvider.getInstance().ExecuteQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void Muon(string idTV, string idTB)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                string sql =
+                    "update muon_tra_tb " +
+                    "set time_borrow = @time_borrow , state = 'Đang mượn' " +
+                    "where idTV = @idTV and idTB = @idTB and state = 'Đang đặt chỗ'";
+                int res = DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { dateTime, idTV, idTB });
+                if (res == 0) throw new Exception("Thông tin không hợp lệ!");
 
+                sql =
+                "update thiet_bi " +
+                "set state = 'Đang mượn' " +
+                "where id = @idTB";
+                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { idTB });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public void Tra(string idTB)
+        {
+            try
+            {
+                DateTime dateTime = DateTime.Now;
+                string sql =
+                    "update muon_tra_tb " +
+                    "set time_return = @time_return , state = 'Đã trả' " +
+                    "where idTB = @idTB and state = 'Đang mượn'";
+                int res = DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { dateTime, idTB });
+                if (res == 0) throw new Exception("Thông tin không hợp lệ!");
+
+                sql =
+                "update thiet_bi " +
+                "set state = 'Sẵn sàng' " +
+                "where id = @idTB";
+                DataProvider.getInstance().ExecuteNonQuery(sql, new object[] { idTB });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace qly_thuquan.Controllers
             }
             return dt;
         }
+
         public void insert(string idTV, string name, double price)
         {
             try

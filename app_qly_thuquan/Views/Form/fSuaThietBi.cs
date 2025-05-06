@@ -23,6 +23,11 @@ namespace qly_thuquan
             this.tb = tb;
             txbId.Text = tb.getId() + "";
             txbName.Text = tb.getName() + "";
+            if(tb.getState()=="Đang đặt chỗ" || tb.getState()=="Đang mượn")
+            {
+                cbbState.Items.Add(tb.getState());
+                cbbState.Enabled = false;
+            }
             cbbState.Text = tb.getState();
         }
 
@@ -42,6 +47,11 @@ namespace qly_thuquan
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cbbState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

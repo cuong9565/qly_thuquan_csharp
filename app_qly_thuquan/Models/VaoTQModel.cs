@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,22 @@ namespace qly_thuquan.Models
                 DataProvider.getInstance().ExecuteNonQuery(sql, new object[] {idTV, dt});
             }
             catch (Exception ex) {
+                throw new Exception(ex.Message);
+            }
+        }
+        public DataTable getAll()
+        {
+            try
+            {
+                string sql =
+                    "select tv.id as 'MSSV', tv.lName as 'Họ', tv.fName as 'Tên', tv.dateCreate as 'Ngày đăng ký', tv.email as 'Email', tv.phone as 'Số điện thoại', tq.time_in as 'Thời gian vào' " +
+                    "from vao_tq tq " +
+                    "join thanh_vien tv on tq.idTV = tv.id " +
+                    "order by tq.id desc";
+                return DataProvider.getInstance().ExecuteQuery(sql);
+            }
+            catch (Exception ex)
+            {
                 throw new Exception(ex.Message);
             }
         }

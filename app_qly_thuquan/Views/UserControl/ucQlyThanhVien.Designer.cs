@@ -48,6 +48,7 @@
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.bds = new System.Windows.Forms.BindingSource(this.components);
+            this.btnResetPassword = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThanhVien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -136,6 +137,7 @@
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnImportExcel);
+            this.groupBox1.Controls.Add(this.btnResetPassword);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.btnUpdate);
@@ -152,7 +154,7 @@
             this.groupBox2.Controls.Add(this.txbYear);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnDeleteByYear);
-            this.groupBox2.Location = new System.Drawing.Point(546, 0);
+            this.groupBox2.Location = new System.Drawing.Point(744, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(250, 100);
             this.groupBox2.TabIndex = 1;
@@ -191,7 +193,7 @@
             // btnImportExcel
             // 
             this.btnImportExcel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportExcel.Location = new System.Drawing.Point(350, 25);
+            this.btnImportExcel.Location = new System.Drawing.Point(549, 25);
             this.btnImportExcel.Name = "btnImportExcel";
             this.btnImportExcel.Size = new System.Drawing.Size(150, 50);
             this.btnImportExcel.TabIndex = 2;
@@ -226,6 +228,7 @@
             "Mã số",
             "Họ",
             "Tên",
+            "Ngày đăng ký",
             "Email",
             "Số điện thoại"});
             this.cbSearch.Location = new System.Drawing.Point(50, 35);
@@ -253,6 +256,17 @@
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPassword.Location = new System.Drawing.Point(356, 25);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(187, 50);
+            this.btnResetPassword.TabIndex = 2;
+            this.btnResetPassword.Text = "Cài lại mật khẩu";
+            this.btnResetPassword.UseVisualStyleBackColor = true;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // ucQlyThanhVien
             // 
@@ -299,5 +313,6 @@
         private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.ComboBox cbSearch;
         private System.Windows.Forms.BindingSource bds;
+        private System.Windows.Forms.Button btnResetPassword;
     }
 }

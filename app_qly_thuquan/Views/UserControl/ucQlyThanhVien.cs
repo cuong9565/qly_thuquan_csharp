@@ -81,7 +81,20 @@ namespace qly_thuquan
                 if (choose == DialogResult.Yes)
                 {
                     int year = int.Parse(txbYear.Text);
-                    int res = ThanhVienController.getInstance().deleteByYear(year);
+                    int res = 0;
+                    StringBuilder sb = new StringBuilder();
+                    foreach (ThanhVien tv in ThanhVienController.getInstance().getAllListByYear(year))
+                    {
+                        try
+                        {
+                            ThanhVienController.getInstance().delete(tv.GetId());
+                            res++;
+                        }
+                        catch (Exception ex) { 
+                            sb.AppendLine(ex.Message);
+                        }
+                    }
+                    if(sb.Length > 0) MessageBox.Show(sb.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     MessageBox.Show($"Xóa thành công {res} thành viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txbYear.Text = "";
                     load();
@@ -145,7 +158,25 @@ namespace qly_thuquan
         {
             string txt = txbSearch.Text.Trim();
             string col = cbSearch.SelectedItem.ToString();
-            bds.Filter = $"[{col}] like '%{txt}%'";
+            bds.Filter = $"CONVERT([{col}], 'System.String') LIKE '%{txt}%'";
+        }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            int row = dtgvThanhVien.SelectedRows[0].Index;
+            if (row >= 0)
+            {
+                DialogResult res = MessageBox.Show("Bạn có chắc muốn cài lại mật khẩu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    string id = (string)dtgvThanhVien.Rows[row].Cells[0].Value;
+                    ThanhVienController.getInstance().resetPassword(id);
+                    MessageBox.Show("Cài lại mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    load();
+                }
+            }
+            else MessageBox.Show("Vui lòng chọn thông tin cần cài lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
     }
 }

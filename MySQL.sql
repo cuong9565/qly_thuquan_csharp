@@ -150,4 +150,7 @@ join thiet_bi tb on idTB = tb.id;
 
 select *
 from vao_tq
-order by time_in desc
+order by time_in desc;
+
+select *
+from thiet_bi;

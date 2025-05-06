@@ -34,6 +34,23 @@ namespace qly_thuquan.Models
             }
             return dt;
         }
+        public void checkViPham(string idTV)
+        {
+            try
+            {
+                string sql =
+                    "select * " +
+                    "from vi_pham " +
+                    "where idTV = @idTV and state = 'Chưa xử lý'";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] { idTV });
+                if (dt.Rows.Count > 0)
+                    throw new Exception("Thành viên đang bị xử lý vi phạm!");
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
         public void insert(string idTV, string name, double price)
         {
             try
@@ -48,6 +65,7 @@ namespace qly_thuquan.Models
                 throw new Exception(e.Message);
             }
         }
+
         public void update(int id, string name, double price, string state)
         {
             try
