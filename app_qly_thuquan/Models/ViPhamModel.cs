@@ -109,5 +109,55 @@ namespace qly_thuquan.Models
                 throw new Exception(e.Message);
             }
         }
+
+        // Thống kê
+        public int NumVPDaXuLy()
+        {
+            try
+            {
+                string sql =
+                    "select count(*) " +
+                    "from vi_pham " +
+                    "where state = 'Đã xử lý'";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql);
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public int NumVPChuaXuLy()
+        {
+            try
+            {
+                string sql =
+                    "select count(*) " +
+                    "from vi_pham " +
+                    "where state = 'Chưa xử lý'";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql);
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public double NumVPBoiThuong()
+        {
+            try
+            {
+                string sql =
+                    "select sum(price) " +
+                    "from vi_pham " +
+                    "where state = 'Đã xử lý'";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql);
+                return Convert.ToDouble(dt.Rows[0][0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

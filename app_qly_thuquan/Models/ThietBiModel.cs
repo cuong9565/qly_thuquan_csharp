@@ -100,7 +100,6 @@ namespace qly_thuquan.Model
                 throw new Exception(e.Message);
             }
         }
-
         public int deleteByTopId(string top)
         {
             int res;
@@ -117,6 +116,22 @@ namespace qly_thuquan.Model
                 throw new Exception(e.Message);
             }
             return res;
+        }
+        // Thong ke
+        public int NumTB()
+        {
+            try
+            {
+                string sql =
+                    "select count(*) " +
+                    "from thiet_bi";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql);
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }

@@ -152,5 +152,5 @@ select *
 from vao_tq
 order by time_in desc;
 
-select *
-from thiet_bi;
+select count(*) as result
+from vi_pham

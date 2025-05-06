@@ -149,5 +149,21 @@ namespace qly_thuquan.Model
                 throw new Exception(e.Message);
             }
         }
+        // Thong ke
+        public int NumTV()
+        {
+            try
+            {
+                string sql =
+                    "select count(*) " +
+                    "from thanh_vien";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql);
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

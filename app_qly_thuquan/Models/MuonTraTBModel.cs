@@ -80,5 +80,38 @@ namespace qly_thuquan.Models
                 throw new Exception(ex.Message);
             }
         }
+        // Thong ke
+        public int NumDat(DateTime dtFrom, DateTime dtTo)
+        {
+            try
+            {
+                string sql =
+                    "select count(*) " +
+                    "from muon_tra_tb " +
+                    "where date(time_book) between @dtFrom and @dtTo";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] { dtFrom, dtTo });
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        public int NumMuon(DateTime dtFrom, DateTime dtTo)
+        {
+            try
+            {
+                string sql =
+                    "select count(*) " +
+                    "from muon_tra_tb " +
+                    "where time_borrow is not null and date(time_borrow) between @dtFrom and @dtTo";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] { dtFrom, dtTo });
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

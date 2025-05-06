@@ -45,5 +45,22 @@ namespace qly_thuquan.Models
                 throw new Exception(ex.Message);
             }
         }
+        // Thong ke
+        public int NumVao(DateTime dtFrom, DateTime dtTo)
+        {
+            try
+            {
+                string sql =
+                    "select count(*) " +
+                    "from vao_tq " +
+                    "where date(time_in) between @dtFrom and @dtTo";
+                DataTable dt = DataProvider.getInstance().ExecuteQuery(sql, new object[] { dtFrom, dtTo });
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

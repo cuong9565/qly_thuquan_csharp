@@ -81,13 +81,23 @@ namespace qly_thuquan.Controller
                 throw new Exception(ex.Message);
             }
         }
-
         public int deleteByTopId(string top)
         {
             try
             {
                 if (top.Length != 2) throw new Exception("Chuỗi nhập vào phải là 2 kí tự");
                 return ThietBiModel.getInstance().deleteByTopId(top);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public int NumTB()
+        {
+            try
+            {
+                return ThietBiModel.getInstance().NumTB();
             }
             catch (Exception ex)
             {

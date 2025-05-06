@@ -111,12 +111,23 @@ namespace qly_thuquan.Controller
                 throw new Exception(ex.Message);
             }
         }
-
         public void resetPassword(string id)
         {
             try
             {
                 ThanhVienModel.getInstance().resetPassword(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public int NumTV()
+        {
+            try
+            {
+                return ThanhVienModel.getInstance().NumTV();
             }
             catch (Exception ex)
             {

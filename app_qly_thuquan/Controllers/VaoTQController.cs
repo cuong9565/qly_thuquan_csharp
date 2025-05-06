@@ -42,5 +42,16 @@ namespace qly_thuquan.Controllers
                 throw new Exception(e.Message);
             }
         }
+        public int NumVao(DateTime dtFrom, DateTime dtTo)
+        {
+            try
+            {
+                return VaoTQModel.getInstance().NumVao(dtFrom, dtTo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -105,5 +105,40 @@ namespace qly_thuquan.Controllers
                 throw new Exception(e.Message);
             }
         }
+
+        // Thong ke
+        public int NumVPDaXuLy()
+        {
+            try
+            {
+                return ViPhamModel.getInstance().NumVPDaXuLy();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public int NumVPChuaXuLy()
+        {
+            try
+            {
+                return ViPhamModel.getInstance().NumVPChuaXuLy();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public double NumVPBoiThuong()
+        {
+            try
+            {
+                return ViPhamModel.getInstance().NumVPBoiThuong();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

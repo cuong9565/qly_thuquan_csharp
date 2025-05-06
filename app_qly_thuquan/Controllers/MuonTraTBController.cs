@@ -50,5 +50,28 @@ namespace qly_thuquan.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        public int NumDat(DateTime dtFrom, DateTime dtTo)
+        {
+            try
+            {
+                return MuonTraTBModel.getInstance().NumDat(dtFrom, dtTo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public int NumMuon(DateTime dtFrom, DateTime dtTo)
+        {
+            try
+            {
+                return MuonTraTBModel.getInstance().NumMuon(dtFrom, dtTo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
